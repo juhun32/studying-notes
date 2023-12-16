@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <p>1보다 크고 10보다 작은 숫자를 입력하시오</p>
+    나이: <input type="text" id="num"> <span id="msg"></span>
+<hr>
+    <button type="button" onclick="check()">입력값 검증</button>
+
+    <script>
+        function check(){
+            //값이 있는지
+            //숫자인지 isNaN()
+            // 1~10 사이인지
+            let value = document.getElementById("num").value;
+            let span = document.getElementById("msg");
+
+            if(value == "" || value == null){
+                span.innerHTML = "값을 넣으시오!";
+                return;
+            }
+            if(isNaN(value)){
+                span.innerHTML = "숫자를 넣으시오!";
+                return;
+            }
+            if(value < 1 || value >10){
+                span.innerHTML = "1~10 사이의 숫자를 넣으시오!";
+                return;
+            }
+            span.innerHTML = "잘 했어!";
+        }
+    </script>
+
+</body>
+</html>

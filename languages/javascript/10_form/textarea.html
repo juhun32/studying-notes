@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>오늘 하루</h1>
+
+    <form action="">
+        제목: <input type="text" name="title" id="title" value="hi">
+        <hr>
+        내용: <br>
+        <textarea name="content" id="content" cols="30" rows="10">cdsfdsfsdfds</textarea>
+        <hr>
+        <button type="button" id="go">올리기</button>
+    </form>
+
+    <script>
+        console.log(document.querySelector('#content').value);
+        document.querySelector('#content').value = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+
+        document.querySelector('#go').onclick = function () {
+            let val = document.querySelector('#content').value;
+            // if (val.length == 0 || val == "" || val == null) {
+            //     alert('Wrong content!');
+            // }
+            if (/^\s*$/g.test(val) || val.indexOf('\n') != -1) {
+                alert('Wrong content!');
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

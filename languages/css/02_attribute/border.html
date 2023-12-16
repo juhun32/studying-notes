@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            /* border-width: 2px; */
+            border-style: solid;
+            border-color: blue;
+            border-width: 2px;
+        }
+
+        p {
+            padding: 10px;
+            border: 1px solid blue;
+            margin: 5px;
+        }
+
+        p.dotted {
+            border: 3px dotted red;
+        }
+
+        p.dashed {
+            border: 3px dashed brown;
+        }
+
+        p.double {
+            border: 3px double skyblue;
+        }
+
+        p.groove {
+            border: 3px groove rgb(181, 223, 98);
+        }
+
+        p.ridge {
+            border: 3px ridge yellow;
+        }
+
+        p.inset {
+            border: 10px inset brown;
+        }
+
+        p.outset {
+            border: 10px outset navy;
+        }
+
+        p.none {
+            border: 3px none brown;
+        }
+
+        p.hidden {
+            border: 3px hidden brown;
+        }
+
+        p.inherit {
+            border: inherit
+        }
+
+        p.inherit {
+            border-style: dotted dashed double solid;
+            border-width: 1px 3px 5px 7px;
+            border-color: red violet blue teal;
+        }
+
+        p.square {
+            border-style: solid;
+            border-color: red blue;
+            width: 0px;
+            border-width: 25px;
+        }
+
+        p.left_bar {
+            border-left: 5px solid green;
+        }
+
+        p.bottom_bar {
+            border-bottom: 5px solid green;
+        }
+
+        p.button {
+            border: 2px solid green;
+            width: 120px;
+            height: 20px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        p.button:hover {
+            color: white;
+            background-color: green;
+            cursor: pointer;
+        }
+
+        p.info {
+            width: 200px;
+            line-height: 200px; text-align: center; font-size: 100px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>border style property</h2>
+    <div>
+        <p>하나의 속성에 여러 값을 한번에 적용할 수도 있다.</p>
+        <p class="dotted">A dotted border</p>
+        <p class="dashed">A dashed border</p>
+        <p class="double">A double border</p>
+        <p class="groove">A groove border</p>
+        <p class="ridge">A ridge border</p>
+        <p class="inset">A inset border</p>
+        <p class="outset">A outset border</p>
+        <p class="none">A none border</p>
+        <p class="hidden">A hidden border</p>
+        <p class="inherit">A inherit border</p>
+        <p class="mix">A mixed border</p>
+        <p class="square"></p>
+        <p class="left_bar">left bar</p>
+        <p class="bottom_bar">bottom_bar</p>
+        <p class="button">button</p>
+        <p class="info">info</p>
+
+    </div>
+</body>
+
+</html>

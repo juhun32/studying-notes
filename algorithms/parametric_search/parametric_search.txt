@@ -1,0 +1,3 @@
+algorithm that turns optimization problem into a decision problem
+
+time complexity: O(logN)

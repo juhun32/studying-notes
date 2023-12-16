@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+    <h1>switch</h1>
+    <h2>오늘은 <span id="yoil"></span>요일 입니다.</h2>
+
+    <script>
+        let day = new Date().getDay();
+        console.log(day);
+
+        let yoil = document.getElementById("yoil");
+
+        // switch(식, 값){
+        //     case 값:
+        //         실행문
+        //         break;
+        //     case 값:
+        //         실행문
+        //         break;
+        //     default:
+        //         실행문
+        // }
+
+        switch (day) {
+            case 0:
+                yoil.innerHTML = "일";
+                break;
+            case 1:
+                yoil.innerHTML = "월";
+                break;
+            case 2:
+                yoil.innerHTML = "화";
+                break;
+            case 3:
+                yoil.innerHTML = "수";
+                break;
+            case 4:
+                yoil.innerHTML = "목";
+                break;
+            case 5:
+                yoil.innerHTML = "금";
+                break;
+            case 6:
+                yoil.innerHTML = "토";
+                break;
+            default:
+                yoil.innerHTML = "미친";
+        }
+    </script>
+</body>
+
+</html>

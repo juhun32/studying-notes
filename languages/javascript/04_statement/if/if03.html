@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+    <h1>중첩 if</h1>
+
+    <form action="" method="post" name="frm">
+        <fieldset>
+            <legend>로그인</legend>
+            <label for="id">id: </label> <input type="text" name="id" id="id">
+            <label for="pw">pw: </label> <input type="password" name="pw" id="pw">
+            <button type="button" onclick="gogo()">로그인</button>
+        </fieldset>
+    </form>
+
+    <script>
+        const gogo = function () {
+
+            let id = document.getElementById("id");
+            console.log(id);
+            console.log(id.value);
+            let pw = document.getElementById("pw");
+
+            //form validation (폼 값 검증)
+            if (id.value == "" || id.value == null) {
+                alert("id 입력하셈 ㅋㅋㅋ");
+                id.focus();
+                return false; //함수는 return 을 만나면 수행 끝
+            }
+            if (pw.value == "" || pw.value == null) {
+                alert("pw 입력하셈 ㅋㅋㅋ");
+                pw.focus();
+                return false; //함수는 return 을 만나면 수행 끝
+            }
+            //frm.submit();
+
+            //id - ace : pw - 1234 => 로그인 성공
+            //id 만 맞으면 비밀번호 오류
+            //id 틀리면 id 오류
+
+            if (id.value == "ace") { //id 값이 맞은 경우
+                if (pw.value == "1234") { //id, pw 다 맞은 경우
+                    alert("로그인 성공!");
+                }else{ //id는 맞는데 pw가 안 맞는 경우
+                    alert("비밀번호 오류!");
+                }
+            }else{// id가 맞지 않는 경우
+                alert("id 오류!");
+            }
+        }
+
+    </script>
+</body>
+
+</html>

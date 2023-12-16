@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>semantic_tag</title>
+    <style>
+        header {
+            background-color: skyblue;
+            padding: 2em;
+        }
+
+        nav {
+            background-color: black;
+            color: white;
+            padding: 15px;
+        }
+
+        section {
+            background-color: antiquewhite;
+            float: left;
+            width: 70%;
+        }
+
+        article.news1 {
+
+            background-color: limegreen;
+
+            padding: 5em;
+            margin: 5px;
+        }
+
+        article.news2 {
+            background-color: palevioletred;
+            padding: 5em;
+            margin: 5px;
+        }
+
+        
+        aside{
+            background-color: cadetblue;
+            padding: 15em 5px; 
+            
+        }
+        footer{background-color: brown; color: white;
+            text-align: center;
+        padding: 2em; 
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <h1>헤더영역(HTML5 New Tags: Semantic)</h1>
+        </header>
+        <nav>네비게이션 영역</nav>
+        <section>
+            컨텐츠 영역
+            <article class="news1"><h2>뉴스 1: 실제 컨텐츠</h2>
+            <p>asdsafsdfsdfsdf</p></article>
+            <article class="news2">뉴스 2: 실제 컨텐츠</article>
+            <figure>
+                <figcaption>단풍</figcaption>
+                <video src="../../images/SANY0103(1).MP4" autoplay controls></video>
+                <legend>캡션</legend>
+            </figure>
+        </section>
+        <aside>참조 영역</aside>
+        <footer>서비스 제공자 info 영역</footer>
+    </div>
+    
+</body>
+</html>

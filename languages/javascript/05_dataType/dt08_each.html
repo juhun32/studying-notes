@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let records = [98, 76, 49, 91, 100, 83, 77];
+
+        //forEach, filter, map, reduce = > stream함수
+        for (let a in records) {
+            console.log(records[a]);
+        }
+        console.log("-----------------");
+        let sum = 0;
+        for (let a of records) {
+            console.log(a);
+            sum += a;
+        }
+        console.log("-----------------");
+        records.forEach(function (a){
+            console.log(a);
+        });
+        console.log("-----------------");
+        records.forEach((a) => console.log(a));
+        // sum = 0;
+        // records.forEach((a) => {console.log(a); sum += a;});
+        console.log("-----------------");
+        let fruits = ["apple", "Pear", "strawberry", "melon", "orange", "peach", "pineapple"];
+
+        for(let f in fruits){
+            let word = fruits[f];
+            if(word[0].toLocaleLowerCase() == "p"){
+                console.log(word);
+            }
+        }
+        console.log("---------------");
+        let result = fruits.filter(word => word.length >= 6);
+        let result1 = fruits.filter(word => word[0].toLocaleLowerCase() == "p");
+        console.log("result >>> ", result);
+        console.log("result >>> ", result1);
+
+
+
+
+        //2차원 Array
+        let dogs = ["삐롱이", "꼬복", "찐따"];
+        let cats = ["ㄱㄱ", "ㄴㄴ", "ㄷㄷ"];
+        let pets = [dogs, cats];
+        console.log(pets);
+        console.log(pets[0][1]);
+        for (let a in pets) {
+            for (let b in pets[a]) {
+                console.log(pets[a][b]);
+            }
+        }
+
+        let myInfo = { name: "tom", pets: pets, age: 33 };
+
+    </script>
+</body>
+
+</html>

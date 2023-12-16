@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul li {
+            border: 1px solid #ddd;
+            width: 100px;
+            padding: 5px;
+            margin: 3px;
+            text-align: center;
+        }
+
+        ul.block li {
+            display: inline-block;
+        }
+        ul.block li:hover{background-color: #ccc; cursor: pointer;;}
+        ul.inline{list-style-type: none;}
+        #a{display: none;}
+        #b{visibility: hidden;}
+        button{width: 100px; height: 50px;} 
+    </style>
+</head>
+
+<body>
+    <h3>block level elements &amp; inline elements</h3>
+    <button type="button" onclick="on()">on</button>
+    <button type="button" onclick="off()">off</button>
+    <p>block tag</p>
+    <ul class="block">
+        <li>h1~h6</li>
+        <li>div</li>
+        <li>p</li>
+        <li id="a">form</li>
+        <li>header</li>
+        <li id="b">section</li>
+        <li>ul,li</li>
+    </ul>
+    <hr>
+    <p>inline tag</p>
+    <ul class="inline">
+        <li>a</li>
+        <li>li</li>
+        <li>span</li>
+        <li>b, strong, em</li>
+        <li>img</li>
+        <li>input, select</li>
+    </ul>
+    <script>
+        function on(){
+            document.getElementById("a").style.display = "inline-block"
+            document.getElementById("b").style.display = "visible"
+        }
+        function off(){
+            document.getElementById("a").style.display = "none"
+            document.getElementById("b").style.display = "hidden"
+         }
+
+    </script>
+</body>
+
+</html>

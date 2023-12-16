@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function () {
+            var fruits = ["apple", "banana", "orange", "melon"];
+            var cars = ["sonata", "grandure", "genesis"];
+            //b태그를 하나씩 꺼내서
+            $('b').each(function () {
+                //꺼낸 b태그에 클릭이벤트 부여
+                $(this).on("click", function () {
+                    //--클릭 이벤트가 발생했을 때 할 일 정의
+                    //$ul 변수에 b태그의 바로 다음 형제(ul)를 저장(제이쿼리 객체 - 제이쿼리 함수를 쓸 수 있다)
+                    let $ul = $(this).next();
+                    //ul 태그의 속성(attribute)인 id의 값을 뽑아서 fruit 문자열이 포함되어 있는지 확인
+                    if($ul.attr("id").includes('fruit')){
+                        //fruits array의 값을 하나씩 빼서 함수로 넘겨줌
+                        $.each(fruits, function(idx, val){
+                            console.log(val);
+                            //li 태그를 만들고 array에서 받은 값을 넣은 다음 ul 태그에 append 함
+                            $ul.append($("<li>").append(val));
+                        });
+                       
+                    }else{
+                        $.each(cars, function(idx, val){
+                            console.log(val);
+                            $ul.append($("<li>").append(val));
+                        });
+                    }
+                    
+                });
+            }) 
+          
+        });
+
+
+    </script>
+</head>
+
+<body>
+
+    <div>
+        <b> 내가 좋아하는 과일 </b>
+        <ul id="fruit_list"></ul>
+    </div>
+
+    <div>
+        <b> 갖고 싶은 차 </b>
+        <ul id="car_list"></ul>
+    </div>
+</body>
+
+</html>

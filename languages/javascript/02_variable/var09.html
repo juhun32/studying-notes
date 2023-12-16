@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <h2>javascript  변수의 Scope</h2>
+
+    <p>예: global 변수는 스크립트 전체에서 사용할 수 있다.</p>
+
+<script>
+    console.log(car);
+    var car = "HD";
+    console.log(car);
+
+    
+    car = "benz"
+    console.log(car);
+    
+    func();
+    function func(){
+        //함수 안에서 선언한 함수는 함수 밖에서 보이지 않는다
+        var car = "porsche";
+        name = "ace";
+        console.log(name);
+        console.log(car);
+    }   
+
+    console.log(car);
+    console.log(name);
+
+    if(true){
+        var age=17;
+        console.log(age);
+    }
+    console.log(age);
+
+    //ecmascript (javascript) 6 - 2017 부터 변수를 let, const로 선언
+    //변수의 scope를 명확히 하기 위해서
+    //let: 변할 수 있는 값을 저장하는 변수
+
+    if(true){
+        let price = 17;
+        console.log(price);
+    }
+    //console.log(price);
+
+    //const: 상수: 초기화 이후 값 변경 불가능
+    const PI = 3.141592;
+    console.log(PI);
+    PI = 3.14
+</script>
+
+</body>
+</html>

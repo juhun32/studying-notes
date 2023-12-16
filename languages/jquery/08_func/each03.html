@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 40px;
+            height: 40px;
+            margin: 5px;
+            float: left;
+            border: 2px blue solid;
+            text-align: center;
+        }
+
+        span {
+            color: red;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <button>Change colors</button>
+    <span></span>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div id="stop"></div>
+    <div></div>
+
+    <script>
+        $(function(){
+            $('button').on('click', function(){
+                $('div').each(function(i, el){
+                    $(this).css("backgroundColor", "yellow");
+                    if($(this).is('#stop')){
+                        $('span').text((i+1) + '번 상자에서 멈춤');
+                        return false;
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

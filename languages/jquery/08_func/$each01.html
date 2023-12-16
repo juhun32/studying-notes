@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+    <script src="../jq/jquery-3.6.1.min.js"></script>
+</head>
+
+<body>
+    <div id="one"></div>
+    <div id="two"></div>
+    <div id="three"></div>
+    <div id="four"></div>
+    <div id="five"></div>
+    <script>
+        $(function () {
+            $.each([55, 77], function(index, val){
+                // console.log(index+ " : " + val);
+            });
+            var obj = {
+            "flammable": "inflammable",
+            "duh": "no duh"
+            };
+            $.each(obj, function(k,v){
+                // console.log(k + " : " + v)
+            });
+
+            var arr = ["one", "two", "three", "four", "five"];
+            let txt = "오늘 저녁: ";
+            let dinner = {
+                one: "불고기",
+                two: "갈비탕",
+                three: "도미회",
+                four: "전복찜",
+                five: "신선로"
+            };
+            let color = {
+                one: "red",
+                two: "green",
+                three: "coral",
+                four: "teal",
+                five: "brown"
+            }
+
+            $.each(arr, function(index, val){
+                // console.log(k, v);
+                console.log($('#'+val));
+                $('#'+val).text(txt + dinner[val]);
+                
+            });
+
+            $.each(color, function(key, val){
+                $('#'+key).css("background", val);
+            });
+        
+        });
+    </script>
+</body>
+</html>

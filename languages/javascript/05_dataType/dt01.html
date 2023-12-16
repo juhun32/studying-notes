@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+    <h1>자바스크립트 자료형</h1>
+    <p>5가지 데이터 타입이 있다</p>
+    <ul>
+        <li>string: 문자열</li>
+        <li>number: 숫자(int, float
+            <!-- 소수 -->)
+        </li>
+        <li>boolean: true, false</li>
+        <li>objeact</li>
+        <li>function : class</li>
+    </ul>
+
+    <p>상세 설명</p>
+    <ul>
+        <li>number(정수, 소수형): 10, 012, 0xa</li>
+        <li>string(문자형): "햄릿은 '사느냐 죽느냐 그것이 문제로다'라고 말했지요"</li>
+        <li>boolean(논리형): true, false</li>
+        <li>object(json): javascript object notation => {"name": "kim", "age": 27}</li>
+    </ul>
+
+    <p>6가지 object 타입이 있다</p>
+    <ul>
+        <li>Object</li>
+        <li>Date</li>
+        <li>Array</li>
+        <li>String</li>
+        <li>Number</li>
+        <li>Boolean</li>
+    </ul>
+
+    <p>값을 가질 수 없는 데이터 타입 2가지</p>
+    <ul>
+        <li>null => 0도 아니고 undefined도 아닌 상태. 즉 초기화 되었으나 값이 없는 상태</li>
+        <li>undefined: 선언되었으나 초기화되지 않은 상태</li>
+    </ul>
+    <h2>typeof : 데이터 타입을 확인하기 위해서 사용하는 연산자</h2>
+    <p id="type"></p>
+
+    <h2>Type Conversion(타입 변환)</h2>
+    <ul>
+        <li>Number => String: String(number), number.toString()</li>
+        <li>Boolean => String: String(boolean), boolean.toString()</li>
+        <li>Date => String: String(date), date.toString()</li>
+        <li>String => Number: Number(string), parseInt(string), parseFloat(string)</li>
+    </ul>
+
+    <script>
+        let a = 7;
+        let b = 3.14;
+        let c = 012;
+        let d = 0xa;
+        let e = 3.13454354e+4;
+        console.log(a + ", " + b+ ", " +c+ ", " +d+ ", " +e);
+
+        let hamlet = "햄릿은 '사느냐 죽느냐 그것이 문제로다'라고 말했지요";
+        let hamlet2 = '햄릿은 "사느냐 죽느냐 그것이 문제로다"라고 말했지요';
+        let hamlet3 = '햄릿은 \"사느냐 죽느냐 그것이 문제로다"\라고 말했지요';
+        console.log("ham: " + hamlet);
+        console.log("ham2" + hamlet2);
+        console.log("ham3" + hamlet3);
+
+        let f = !true;
+        console.log("f: " + f)
+
+        let g = {"name":"kim", "age":25};
+        console.log("g : " + g);
+        console.log(g);
+        console.log("g : " , g);
+        console.log("g.name: ", g.name);
+        console.log("g.age: ", g.age);
+        g.name = "ace";
+        console.log("g,name: ", g.name);
+        g.phone = "010-1111-1111";
+        console.log("g: " , g);
+
+        let h;
+        console.log("h: ", h);
+        let i = null
+        console.log("i: ", i);
+        
+        document.getElementById("type").innerHTML = typeof a + "<br>" +
+        typeof b+ "<br>" +
+        typeof c+ "<br>" +
+        typeof d+ "<br>" +
+        typeof e+ "<br>" +
+        typeof f+ "<br>" +
+        typeof g+ "<br>" +
+        typeof h+ "<br>" +
+        typeof i+ "<br>";
+        console.log("-------------------");
+
+        let j = 7;
+        console.log(typeof(j));
+        console.log(j + 2);
+        console.log(String(j) + 2);
+        Number(j);
+        console.log(typeof(j));
+        
+        console.log("-------------------");
+        
+        let k = 4;
+        console.log(typeof(k))
+        k.toString()
+        console.log(typeof(k))
+        k = k.toString()
+        console.log(typeof(k))
+        
+    </script>
+</body>
+
+</html>

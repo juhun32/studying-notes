@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <h1>while loop</h1>
+    <p>특정 조건에 이를 때까지 계속 실행되는 반복문</p>
+    
+    <p>
+        <pre>
+            while(판별식, 값){
+                실행문
+                while문을 벗어나기 위한 코드
+            }
+
+            do{
+                실행문
+            }while(판별식, 값);
+        </pre>
+    </p>
+
+    <script>
+        let i = 1;
+        while (i < 10){
+            console.log("hi! " + i + "번째 인사 ㅋㅋㅋ <br>");
+            i++;
+        }
+        // while 조건 안맞으면 한번도 안돌림
+
+        console.log("----------------------------------");
+
+        i= 1;
+        do{
+            console.log("hi! " + i + "번째 인사 ㅋㅋㅋ <br>");
+            i++;
+        }while(i < 10);
+
+        //do while 무조건 한번은 실행한다
+    </script>
+</body>
+
+</html>

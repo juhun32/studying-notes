@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+    <h2>JavaScript Callbacks</h2>
+
+    <p>Do a calculation and then display the result.</p>
+
+    <p id="demo"></p>
+
+    <script>
+        function myDisplayer(some) {
+            document.getElementById("demo").innerHTML = some;
+        }
+
+        function myCalculator(num1, num2) {
+            let sum = num1 + num2;
+            myDisplayer(sum);
+        }
+
+        myCalculator(5, 5);
+
+
+        function myCalculator2(num1, num2, myCallback) {
+            let sum = num1 + num2;
+            myCallback(sum);
+        }
+
+        myCalculator2(5, 5, myDisplayer);
+
+        function getFile(myCallback) {
+            let req = new XMLHttpRequest();
+            req.open('GET', "../10_form/file.html");
+            req.onload = function () {
+                if (req.status == 200) {
+                    myCallback(this.responseText);
+                } else {
+                    myCallback("Error: " + req.status);
+                }
+            }
+            req.send();
+        }
+
+        getFile(myDisplayer);
+    </script>
+</body>
+
+</html>

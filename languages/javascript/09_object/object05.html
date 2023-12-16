@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    
+    <script>
+        //class 이름: Car    
+        //속성: brand, color, price, model 
+        //생성자 만들고 자동차 4대 생성하여 myCars 배열에 넣을 것
+        //확장 for문(for in)을 이용해서 차를 한대씩 모두 출력할 것 
+        //document.write("<p>" + key ....)
+        
+        function Car(brand, color, price, model ){
+            this.brand = brand;
+            this.color = color;
+            this.price = price;
+            this.model = model;
+        }
+
+        const c1 = new Car("Benz", "red", 35600, "E300");
+        const c2 = new Car("HD", "yellow", 28700, "sonata");
+        const c3 = new Car("Audi", "blue", 48500, "R8");
+        const c4 = new Car("Bentley", "white", 95600, "ruxury");
+
+        const myCars = [c1, c2, c3, c4];
+
+        console.log(myCars);
+
+        for(let index in myCars){
+            console.log(myCars[index]);
+            let car = myCars[index];
+            for(let key in car){
+                document.write("<p>" + key + " - " + car[key] + "</p>");
+            }
+            document.write("<hr>");
+        }
+
+        function Person(name, age, cars) {
+            this.name = name;
+            this.age = age;
+            this.cars = cars;
+
+            this.myCars = function () {
+                return this.name + " : " + this.cars;
+            }
+        }
+
+
+        // //class 이름: Car    
+        // //속성: brand, color, price, model 
+        // //생성자 만들고 자동차 4대 생성하여 myCars 배열에 넣을 것
+        // //확장 for문(for in)을 이용해서 차를 한대씩 모두 출력할 것 
+        // //document.write("<p>" + key ....)
+
+        // function Car(brand, color, price, model) {
+        //     this.brand = brand;
+        //     this.color = color;
+        //     this.price = price;
+        //     this.model = model;
+        // }
+
+        // const c1 = new Car("Benz", "red", 35600, "E300");
+        // const c2 = new Car("HD", "yellow", 28700, "sonata");
+        // const c3 = new Car("Audi", "blue", 48500, "R8");
+        // const c4 = new Car("Bentley", "white", 95600, "ruxury");
+
+        // const myCars = [c1, c2, c3, c4];
+
+        // console.log(myCars);
+
+        // let tom = new Person("tom", 33, [c1, c2]);
+        // let jane = new Person("jane", 42, [c3, c4]);
+
+        // const people = [tom, jane];
+        // console.log(people);
+        // for (let p in people) {
+        //     document.write("<h3>" + people[p].name + "의 자동차들</h3>");
+        //     let cars = people[p].cars;
+        //     for (let index in cars) {
+        //         //console.log(myCars[index]);
+        //         let car = cars[index];
+        //         for (let key in car) {
+        //             document.write("<p>" + key + " - " + car[key] + "</p>");
+        //         }
+        //         document.write("<hr>");
+        //     }
+        // }
+
+        
+    </script>
+</body>
+</html>

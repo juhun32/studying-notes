@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <h1>My Friends' Pets</h1>
+    <div id="pet"></div>
+
+    <script>
+
+        //function Pet - kind, name-(array)
+        //5개 생성해서 Friend 객체 생성할 때 넣어줌
+        function Pet(kind, name) {
+            this.kind = kind;
+            this.name = name;
+        }
+
+        const p1 = new Pet("dog", ["tori","mori","zori"]);
+        const p2 = new Pet("cat", ["coco","moco","zoco"]);
+        const p3 = new Pet("tiger", ["wow","tow"]);
+        const p4 = new Pet("dog", ["wal","fal","tal"]);
+        const p5 = new Pet("cat", ["aa","bb","cc"]);
+
+        //function Friend - name, age, pets-array
+        //friend 2개 생성, const f1, f2
+        function Friend(name, age, pets){
+            this.name = name;
+            this.age = age;
+            this.pets = pets;
+        }
+
+        const f1 = new Friend("tom", 33, [p1, p2, p3]);
+        const f2 = new Friend("jane", 33, [p4, p5]);
+        
+        //myFriends라는 array에 f1, f2 넣고 div에 출력
+        const myFriends = [f1, f2];
+        console.log(myFriends);
+        
+        //출력
+        let pet = document.getElementById("pet");
+        let result = "";
+        for(let f in myFriends){
+            console.log(myFriends[f]);
+            let friend = myFriends[f];
+            result += "<h2>"+friend.name+"'의 애완동물'</h2>"
+            for(let i in friend.pets){
+                console.log(friend.pets[i]);
+                let pet = friend.pets[i]; 
+                for(let key in pet){
+                    console.log(pet[key]);
+                    if(key == "kind"){
+                        result += "<p>" + pet[key] + "</p>";
+                    }else{
+                        result += "<ul>";
+                        for(let n in pet[key]){
+                            console.log(pet[key][n]);
+                            result += "<li>"+pet[key][n]+"</li>"
+                        }
+                        result += "</ul>"
+                    }
+                }
+            }
+        }
+      
+        console.log(result);
+        pet.innerHTML = result;
+    </script>
+</body>
+</html>

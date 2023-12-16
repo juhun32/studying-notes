@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <h1>나의 친구들</h1>
+    <div id="friends"></div>
+
+    <script>
+        //Person - name, age, gender, method - celebrateBirthday
+        // function Person(name, age, gender) {
+        //     this.name = name ; 
+        //     this.age = age ;
+        //     this.gender = gender;
+
+        //     this.celebrateBirthday = function(){
+        //         console.log("party!!!");
+        //         this.age++;
+        //     }
+        // }
+
+        class Person{
+            //생성자: 객체를 생성하면서 속성에 값을 대입
+            constructor(name, age, gender){
+                this.name = name ; 
+                this.age = age;
+                this.gender = gender;
+            }
+            celebrateBirthday() {
+                console.log("party!!!");
+                this.age++;
+            }
+        }
+
+        const son = new Person("손예림", 26, "female");
+        console.log(son);
+        console.log(son.age);
+        son.celebrateBirthday();
+        console.log(son.age);
+
+        const kang = {
+            name: "강동진",
+            age : 27,
+            gender: "male",
+            celebrateBirthday : function(){
+                console.log("party!!!");
+                this.age++;
+            }
+        };
+        console.log(kang);
+        console.log(kang.age);
+        kang.celebrateBirthday();
+        console.log(kang.age);
+
+        const shin = new Person("신진우", 5, "male");
+        
+        let myFriends = [son, kang, shin];
+
+        console.log(myFriends[1].age);
+        console.log("----------------------");
+        
+        let friends = document.getElementById("friends");
+
+        for(let index in myFriends){
+            let friend = myFriends[index];
+            for(let key in friend){
+                let p = document.createElement("p"); 
+                let node = document.createTextNode(`${key} - ${friend[key]}`); 
+                p.append(node);
+                friends.append(p);
+                
+            }
+            friends.innerHTML += "<hr>";
+        }
+
+
+
+    </script>
+</body>
+</html>

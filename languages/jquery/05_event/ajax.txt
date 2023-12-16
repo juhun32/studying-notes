@@ -1,0 +1,8 @@
+<ul>
+        <li>Asynchronous JavaScript And XML:비동기 자바스크립트 &amp; XML</li>
+        <li>not a programming language: 일종의 오브젝트</li>
+        <li><ul>사용법: 
+            <li>A browser built-in XMLHttpRequest object (to request data from a web server): 브라우저 빌트인 오브젝트(XMLHttpRequest)를 사용해서 웹서버에서 데이터를 읽어들인다. </li>
+            <li>JavaScript and HTML DOM (to display or use the data): 읽어온 데이터를 DOM과  Javascript를 사용해서 보여준다.</li>
+        </ul></li>
+    </ul>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+    <h1>산술, 비교, 논리 연산자</h1>
+
+    <script>
+        //변수 a와 b를 선언하고 각가 35, 20으로 초기화
+        // var a = 35; var b = 20;
+        // var a = 35, b = 20;
+        let a = 35, b = 20;
+
+        //산술연산: +, -, * , / : "곱셈: 700" 콘솔에 출력
+        console.log("곱셈: " + (a * b));
+        console.log("나눗셈: " + (a / b)); //일반 연산과 마찬가지, 소숫점 이하까지 반환
+
+        //"논리: ": >, <, >=, <=, ==, ===, != 
+        //논리 연산의 결과값 - boolean
+        console.log("비교: " + (a >= b));
+        console.log("비교: " + (a == b));
+        console.log("비교: " + (a != b));
+        console.log("---------------------------------");
+
+        let c = 7, d = "7";
+        console.log("항등: " + (c == d));
+        console.log("항등: " + (c != d));
+        console.log("항등: " + (c === d));//값과 타입 모두 비교
+        console.log("항등: " + (c !== d));
+
+        console.log("---------------------------------");
+        
+        //나머지 연산: %
+        console.log("나머지: " + (a % b));
+        console.log("---------------------------------");
+        //관계 연산자: &&(and), ||(or)
+
+        //a가 5의 배수인가? 
+        console.log("배수: " + (a % 5 == 0));
+
+        //a가 5와 7의 공배수인가? 
+        //true && true => true
+        console.log((a % 5 == 0) && (a % 7 == 0));
+        //true && false => false
+        console.log((a % 5 == 0) && (a % 6 == 0));
+        //false && true => false
+        console.log((a % 6 == 0) && (a % 5 == 0));
+        //false && false => false
+        console.log((a % 6 == 0) && (a % 8 == 0));
+        console.log("---------------------------------");
+        //a가 5의 배수이거나 7의 배수인가? 
+        //true || true => true
+        console.log((a % 5 == 0) || (a % 7 == 0));
+        //true || false => true
+        console.log((a % 5 == 0) || (a % 6 == 0));
+        //false || true => true
+        console.log((a % 6 == 0) || (a % 5 == 0));
+        //false || false => false
+        console.log((a % 6 == 0) || (a % 8 == 0));
+        console.log("---------------------------------");
+        //not 연산자 - boolean 값을 반대로 바꿈
+        console.log(!(a % 5 == 0));
+        console.log(!(a % 6 == 0));
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{padding: 10px; margin-bottom: 10px;}
+        input:disabled{background-color: tomato; color: white}
+        input:enabled{background-color: yellowgreen;}
+        input:focus{background-color: maroon; color:white}
+        input:checked{width: 20px; height: 20px;}
+        input[type="text"]{font-size: 30px;}
+    </style>
+</head>
+<body>
+    <h1>form 요소 속성 선택자</h1>
+    <form action="">
+        <fieldset>
+            <legend>오늘 점심 식사</legend>
+            한식: <input type="text" name="kor" value="갈비탕" disabled>
+            <br>
+            중식: <input type="text" name="chi" value="짜장면" >
+            <br>
+            양식: <input type="text" name="ame" value="스테이크" >
+            <hr>
+            <input type="checkbox" value="식사">식사 여부
+            <input type="checkbox" value="외상">외상 여부
+        </fieldset>
+    </form>
+</body>
+</html>

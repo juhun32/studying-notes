@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <h1>setTimeout &amp; clearTimeout</h1>
+    <p>setTimeout: 일정시간 delay 후에 특정 함수 실행</p>
+    <p>clearTimeout: 정해진 시간이 지나기 전에 setTimeout 취소</p>
+
+    <h2 id="greet">hi!</h2>
+
+    <button onclick="clearTimeout(afternoon)">점심 인사 취소 </button>
+    <script>
+        let greet = document.querySelector('#greet');
+
+        setTimeout(function(){
+            greet.innerHTML = "좋은 아침";
+        }, 1000);
+
+        let afternoon = setTimeout(function(){
+            greet.innerHTML = "좋은 점심";
+        }, 3000);
+
+        let myWindow;
+        setTimeout(function(){
+            myWindow = window.open("move_box.html","","width=400, height= 400");
+        }, 2000);
+        setTimeout(function(){
+            myWindow.close()
+        }, 4000);
+
+
+    </script>
+</body>
+</html>

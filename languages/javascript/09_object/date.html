@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Date()</h1>
+
+    <script>
+        var now = new Date();
+        console.log(now);
+        console.log(now.getHours());
+        console.log(now.getMinutes());
+        console.log(now.getSeconds());
+
+        //Person 객체를 찍어내기 위한 틀 역할
+        function Person(name, age){
+            this.name = name;
+            this.age = age;
+        }
+
+        var p1 = {"name": "tom", "age": 33 };
+        
+        console.log(p1);
+        console.log(p1.name);
+        console.log(p1.age);
+        // var p3 ='"name": "tom", "age": 33';
+        // console.log(p3);
+        // console.log(p3.name);
+        var p2 = new Person("jane", 22);
+        console.log(p2);
+        console.log(p2.name);
+        console.log(p2.age);
+        var p3 = new Person("smith", 52);
+        console.log(p3);
+        console.log(p3.name);
+        console.log(p3.age);
+
+        var now2 = new Date(1919, 02, 01, 09, 00, 00);
+        console.log(now2);
+        console.log(now2.getFullYear());
+        console.log(now2.getMonth() + 1);
+        console.log(now2.getDate());
+        console.log(now2.getHours());
+        console.log(now2.getMinutes());
+        console.log(now2.getSeconds());
+
+        //1970년 1월 1일 09시로부터의 밀리초 지난 시간
+        var now3 = new Date(1000000000000);
+        console.log(now3);
+
+        // 값이 하나면 밀리초
+        // 3개면 연도 달 날
+        // 6개 연도 달 날 시 분
+
+        // var now4 = Date();
+        // console.log(now4);
+        // console.log(now4.getFullYear());
+        // console.log(now4.getMonth() + 1);
+        // console.log(now4.getDate());
+
+        let milli = now.getTime();
+        console.log(milli);
+        var today = new Date(1661911012365);
+        var today = new Date(now.getTime());
+        console.log(today);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            background: #032527;
+        }
+
+        .header h1 {
+            color: white;
+            text-align: center;
+        }
+
+        #slider {
+            width: 720px;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 20px;
+            margin: 20px auto;
+        }
+
+        /*the sildeer div has a defined width and height which acts as a screen inside another screen*/
+
+        #slider .slides {
+            display: block;
+            width: 6000px;
+            height: 400px;
+            margin: 0;
+            padding: 0;
+        }
+
+        /*the list inside has a greater width and height to cover all the slideX with a display block type*/
+
+        #slider .slide {
+            float: left;
+            list-style-type: none;
+            width: 720px;
+            height: 400px;
+            text-align: center;
+            font-size: 30px;
+            color: lightblue;
+        }
+
+        #slider .slide p {
+            position: relative;
+            top: 170px;
+        }
+
+
+
+        /*Each slid has the same width as that of the slider hence covering the whole span*/
+
+        .slide1 {
+            background: #9e6ce4;
+        }
+
+        .slide2 {
+            background: #6c56aa;
+        }
+
+        .slide3 {
+            background: #483490;
+        }
+
+        .slide4 {
+            background: #082766;
+        }
+
+        .slide5 {
+            background: #0d4950;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="text-muted">A Basic Slider</h1>
+        </div>
+
+        <div id="slider">
+            <ul class="slides">
+                <li class="slide slide1">
+                    <p>slide1</p>
+                </li>
+                <li class="slide slide2">
+                    <p>slide2</p>
+                </li>
+                <li class="slide slide3">
+                    <p>slide3</p>
+                </li>
+                <li class="slide slide4">
+                    <p>slide4</p>
+                </li>
+                <li class="slide slide5">
+                    <p>slide5</p>
+                </li>
+                <li class="slide slide1">
+                    <p>slide1</p>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script>
+        //using setInterval() to make an image slider
+
+        // function newDate() {
+        //     console.log(new Date());
+        // };
+        // setInterval(newDate, 3000);
+
+        //the above code would console.log the date every 3seconds 
+
+        //$(selector).animate(obj,time,callback);
+        //callback-do something after the animation is complete
+
+        $(document).ready(function () {
+            //seInterval animate margin-left and the last slide go to the first position (0px) 
+
+            var width = 720;
+            var animationSpeed = 1000;
+            var pause = 3000;
+            var currentSlide = 1;
+            // try and configure all the variables so that you can change it at any point( things of the same type at the same place)
+
+            var $slider = $("#slider");
+            var $slideContainer = $slider.find('.slides');
+            var $slides = $slideContainer.find('.slide');
+
+            //the jQuery selector is used only once and the code is very efficient as you are CACHING THE DOM
+            var interval;
+            //have to define the variable outside startSlider() to have it in the scope of a function call
+
+            function startSlider() {
+                interval = setInterval(function () {
+                    $($slideContainer).animate({
+                        "margin-left": "-=" + width
+                    }, animationSpeed, firstSlide);
+                }, pause);
+
+                function firstSlide() {
+                    currentSlide++;
+                    if (currentSlide === $slides.length) {
+                        currentSlide = 1;
+                        $slideContainer.css("margin-left", 0);
+                    }
+                }
+            }
+
+            function stopSlider() {
+                clearInterval(interval);
+            }
+            $slider.on("mouseenter", stopSlider).on("mouseleave", startSlider);
+
+            startSlider();
+        });
+    </script>
+</body>
+
+</html>

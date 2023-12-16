@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+    <h1>Web History API</h1>
+    <ul>
+        <li>back(): Loads the previous URL in the history list</li>
+        <li>forward(): Loads the next URL in the history list</li>
+        <li>go(): Loads a specific URL from the history list</li>
+    </ul>
+
+    <button onclick="myFunction()">Go Back 2 Pages</button>
+
+    <script>
+        function myFunction() {
+            window.history.back();
+            window.history.forward();
+            window.history.go(-2);
+        }
+    </script>
+</body>
+
+</html>

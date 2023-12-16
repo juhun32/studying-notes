@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        li {
+            float: left;
+            color: white;
+            display: block;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            width: 150px;
+        }
+
+        li:hover {
+            background-color: #ccc;
+            color: black;
+        }
+
+        .dd_content {
+            /* position: absolute; */
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 8px 16px gray;
+            z-index: 1;
+            display: none;
+            color: black;
+            padding: 12px 16px;
+            text-align: left;
+        }
+
+        .dd_content:hover {
+            background-color: #777;
+            color: white;
+        }
+
+        li:hover .dd_content {
+            display: block;
+        }
+    </style>
+    <script src="../jq/jquery-3.6.1.min.js"></script>
+</head>
+<body>
+    <ul id="hong" data-age="33"></ul>
+    <script>
+        let obj = {'name':'홍길동'};
+        obj.age = 19;
+        obj.hobby = {'sports': 'swimming', 'instrument': 'drum'};
+        console.log(obj);
+        
+        $.extend(obj, {gender: 'male', wife : 'olivia'});
+        console.log(obj);
+
+        $.each(obj, function(key, value){
+            if(key == 'hobby'){
+                $('#hong').append($('<li id = "hobby"></li>').text(key));
+                $.each(value, function(k, item){
+                    $('#hobby').append($('<dl>').addClass("dd_content")
+                        .append($('<dd>').text(k + " : " + item)));
+                });
+            }else{
+            $('#hong').append($('<li>').text(key + " : " + value));
+            }
+        });
+
+       
+    </script>
+</body>
+</html>

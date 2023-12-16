@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="../../images/0.jpg" id="images" width="200px">
+    <button type="button" id="stop">Stop the Carousel</button>
+    <button type="button" id="start">Start the Carousel</button>
+
+    <script>
+
+        let images = document.getElementById('images');
+        let begin = 0;
+        let timer;
+
+        function carousel() {
+            let image_path;
+            begin = begin % 5;
+            image_path = "../../images/" + (begin + 1) + ".jpg";
+            images.src = image_path;
+            begin++;
+        }
+
+        let start_it = function () {
+            if (timer) stop_it();
+            timer = setInterval(carousel, 2000);
+        }
+
+        var stop_it = function () {
+            clearInterval(timer);
+        }
+
+        document.getElementById('stop').Listener('click', stop_it);
+        document.getElementById('start').Listener('click', start_it);
+
+        images.Listener("mouseover", stop_it);
+        images.Listener("mouseleave", start_it);
+
+        start_it();
+
+    </script>
+</body>
+
+</html>

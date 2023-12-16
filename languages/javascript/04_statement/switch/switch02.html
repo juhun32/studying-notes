@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+    <style>
+        /* body{
+            background-color: skyblue;
+        } */
+        #num{
+            font-size: 100px; height: 400px; width: 400px; 
+            line-height: 400px; text-align: center; color: white;
+            border: 3px solid white; margin: auto; 
+        }
+    </style>
+</head>
+
+<body>
+    <h1>switch - 숫자 받아서 배경색 변경</h1>
+
+    <div id="num">1</div>
+    <script>
+        let select = parseInt(prompt("1~7사이의 숫자를 입력하셈 >>> "));
+        let color;
+        let colors = ["red", "orange", "yellow", "green", "blue", "navy", "violet"]
+
+        switch (select) {
+            case 1:
+                color = colors[0];
+                break;
+            case 2:
+                color = colors[1];
+                break;
+            case 3:
+                color = colors[2];
+                break;
+            case 4:
+                color = colors[3];
+                break;
+            case 5:
+                color = colors[4];
+                break;
+            case 6:
+                color = colors[5];
+                break;
+            case 7:
+                color = colors[6];
+                break;
+
+            default:
+                color = "black";
+        }
+
+        document.body.style.backgroundColor = color;
+        document.getElementById("num").innerHTML = colors[select-1];
+    </script>
+</body>
+
+</html>

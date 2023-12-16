@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+    <script src="../jq/jquery-3.6.1.min.js"></script>
+</head>
+
+<body>
+    <h1>Form Events</h1>
+    <ul>Form Events
+        <li>submit</li>
+        <li>change</li>
+        <li>focus</li>
+        <li>blur</li>
+    </ul>
+    <style>
+        input ~ span{display: none;}
+    </style>
+    <form>
+        <input id="focus" type="text"><span>Nice to meet you!</span>
+        <br>
+        <input type="text"><span>Nice to meet you!</span>
+        <hr>
+        <input type="submit">
+    </form>
+    <script>
+        $(function(){
+            //$('#focus').focus(function(){
+            $('input').focus(function(){
+                $(this).css({"background":"brown","color":"white"});
+                $(this).next().fadeIn(500);
+            }).blur(function(){
+                $(this).css({"background":"white","color":"black"});
+                $(this).next().fadeOut(500);
+            }); 
+            $('form').submit(function(){
+                alert("폼 전송 완료!");
+            });
+        });
+    </script>
+</body>
+
+</html>

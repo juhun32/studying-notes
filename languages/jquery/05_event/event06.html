@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+    <style>
+        .remove{
+            margin: 5px;
+            background-color: white;
+            color: red; border: none; cursor: pointer;
+        }
+    </style>
+    <script src="../jq/jquery-3.6.1.min.js"></script>
+</head>
+<body>
+    <h1>My ToDo List: event delegate</h1>
+    <p>이벤트를 부모에게 주면 자식에게 퍼지는 효과를 이용해서 페이지 로딩 후에 생기는 엘리먼트에 이벤트 적용</p>
+    <p><a href="https://joshua1988.github.io/web-development/javascript/event-propagation-delegation/">참고 사항: event bubbling, capturing, stopPropagation</a></p>
+    
+    <input type="text" placeholder="New Item">
+    <button id="add">할 일 추가</button>
+    <ol id="myList"></ol>
+
+    <script>
+        $(function(){
+            const putList = function(){
+                let txt = $('input').val();
+                let el = $('<li></li>').text(txt).append('<button class="remove">X</button>')
+                $('#myList').append(el);
+                $('input').val("");
+            }
+
+            $('#add').on("click", putList);
+
+            $('input').on("keyup", function(e){
+                if(e.keyCode == 13){
+                    putList();
+                };
+            });
+
+            $('#myList').on('click', '.remove', function(){
+                $(this).parent().remove();
+            });
+
+        });
+    </script>
+</body>
+</html>

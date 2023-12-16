@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <style>
+        .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+
+        .active,
+        .accordion:hover {
+            background-color: #ccc;
+        }
+
+        .accordion:after {
+            content: '\002B';
+            /* + */
+            color: #777;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .active:after {
+            content: "\2212";
+            /* - */
+        }
+
+        .active.nextElementSibling {
+            background-color: cadetblue;
+            max-height: 200px;
+        }
+
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h2>Accordion with symbols</h2>
+    <p>In this example we have added a "plus" sign to each button. When the user clicks on the button, the "plus" sign
+        is replaced with a "minus" sign.</p>
+    <button class="accordion">Section 1</button>
+    <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat.</p>
+    </div>
+
+    <button class="accordion">Section 2</button>
+    <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat.</p>
+    </div>
+
+    <button class="accordion">Section 3</button>
+    <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat.</p>
+    </div>
+
+    <script>
+        // //클래스 이름으로 버튼 3개 잡았어
+        // let acc = document.getElementsByClassName('accordion');
+        // //버튼 개수만큼 반복
+        // for(let i = 0; i < acc.length; i++){
+        //     //버튼 하나 꺼내서 click 이벤트 붙여줌
+        //     acc[i].addEventListener("click", function(){
+        //         //이벤트 발생하면 선택된 버튼에 active 클래스를 토글
+        //         //토글: 있으면 없애고 없으면 써주고
+        //         this.classList.toggle('active');
+        //         //버튼 바로 다음 형제인 요소(div)를 변수 panel에 저장
+        //         let panel = this.nextElementSibling;
+        //         //선택된 div의 높이값이 있으면
+        //         if(panel.style.maxHeight){
+        //             //null 값을 넣어줌 - 닫힘
+        //             panel.style.maxHeight = null;
+        //         }else{ //선택된 div의 높이값이 없을 때
+        //             //div의 내용을 스크롤 없이 보여줄 수 있는 높이(scrollHeight)로 지정
+        //             panel.style.maxHeight = panel.scrollHeight+"px";
+
+        //         }
+        //     });
+        // }
+
+        $(function(){
+        let acc = $('.accordion');
+        acc.each(function(){
+            $(this).on('click', function(){
+                $(this).toggleClass('active');
+                let panel = $(this).next();
+                if(panel.height()){
+                    panel.css("max-height", 0);
+                }else{
+                    panel.css("max-height", panel.prop("scrollHeight"));
+                }
+            });
+        });
+    });
+        
+        
+
+    </script>
+</body>
+
+</html>

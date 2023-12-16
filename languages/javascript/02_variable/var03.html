@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <script>
+        console.log("hi!");
+        //함수: 이름을 호출하면 특정한 기능을 수행
+        //x: ()안에 들어있는 변수  - 매개변수 - 함수가 받아서 사용하는 값
+        function hi(){
+            console.log("hi!");
+        }
+
+        hi(1);
+        hi(2);
+        hi(3);
+        hi(4);
+        hi(5);
+
+        function multi(x, y){
+            return x * y; //결과값을 부른 쪽으로 반환
+            //console.log(x * y);
+        }
+        //multi라는 함수로 4와 9를 전해주고 그 결과값을 받아서 콘솔에 출력해라
+            // console.log(multi(4, 9));
+            //함수 multi를 실행(호출)하면서 4, 9를 전달하도 그 결과값 36을 받아서 변수 result에 저장
+            var result = multi(4, 9);
+            console.log(result);
+
+            
+        
+    </script>
+</body>
+</html>

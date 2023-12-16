@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+    <script src="../jq/jquery-3.6.1.min.js"></script>
+</head>
+
+<body>
+    <ul>
+        <li data-age="12" data-phone="010">전성배</li>
+        <li data-age="9" data-phone="015">손예림</li>
+        <li data-age="21" data-phone="010">박홍도</li>
+        <li data-age="19" data-phone="015">박솔이</li>
+        <li data-age="49" data-phone="010">신진우</li>
+    </ul>
+
+    <h3>성인 목록</h3>
+    <div id="adult"></div>
+    <h3>015 목록</h3>
+    <ul id="fifteen"></ul>
+    <script>
+        $(function () {
+            let result = [];
+
+            $('li').each(function () {
+                let age = $(this).data('age');
+                if (age >= 18) {
+                    result.push($(this).text());
+                }
+            });
+
+            $.each(result, function (idx, value) {
+                $('#adult').append($('<p>').text(`${(idx + 1)}번: ${value}`));
+            });
+
+        
+
+            function checkPhoneNumber() {
+                let phone = $(this).data('phone');
+                return phone == '015';
+            }
+
+            $('#fifteen').append($('li').filter(checkPhoneNumber));
+
+            
+
+        });
+    </script>
+</body>
+
+</html>

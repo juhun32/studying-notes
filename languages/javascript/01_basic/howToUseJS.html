@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+    <!-- external js -->
+    <script src="myScript.js"> /* 사용 못하는 공간 */</script>
+    <!-- internal js -->
+    <script>
+        document.write("<h2>Time to go!!!<h2>")
+    </script>
+</head>
+
+<body>
+    <h1>How to use Javascript?</h1>
+    <div id="change">I'm so sad~</div>
+    <hr>
+    <button type="button" onclick="myFunc()">난 행복한데~~</button>
+    <hr>
+    <!-- inline js -->
+    <a href="javascript:void(0);" onclick="document.getElementById('change').innerHTML = 'I\'m so happy';
+">나도 행복할 거야 </a>
+
+    <!-- internal js : 내부 자바 스크립트 위치로 선호됨 -->
+    <script>
+        // alert("wow");/* 경고창 */
+    </script>
+
+</body>
+
+</html>

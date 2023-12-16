@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+    <h2>* 다음에서 선택하세요</h2>
+    <form action="" name="frm">
+        1. 가장 좋아하는 영화 한 개만을 선택하세요.
+        <br>
+
+        <input type="radio" name="movie" id="m1" value="인디아나 존스"> <label for="m1">인디아나 존스</label>
+        <input type="radio" name="movie" id="m2" value="해리 포터"><label for="m2">해리 포터</label>
+        <input type="radio" name="movie" id="m3" value="쿵후 펜더" ><label for="m3">쿵후 펜더</label>
+        <hr>
+        <input type="button" value="내가 뭘 좋아하지?" onclick="chk()">
+
+    </form>
+
+    <h3>내가 좋아하는 영화: <span id="cinema"></span></h3>
+    <script>
+        function chk(){
+
+            let frm = document.frm;
+            console.log(frm.movie);
+            let no_check = false;
+            for(let i in frm.movie){
+                if(frm.movie[i].checked){
+                    document.getElementById("cinema").innerHTML = frm.movie[i].value;
+                    no_check = true;
+                    break;
+                }
+            }
+            if(!no_check){
+                alert("좋아하는 영화 선택하셈")
+                return;
+            }
+            // frm.submit();
+        }
+    </script>
+</body>
+
+</html>

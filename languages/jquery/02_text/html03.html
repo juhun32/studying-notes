@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+    <script src="../jq/jquery-3.6.1.min.js"></script>
+</head>
+
+<body>
+    <h1>append, prepend, appendTo, prependTo, before, after</h1>
+    <button id="append_prepend">append_prepend</button>
+    <button id="before_after">before_after</button>
+    <button id="appendTo">appendTo</button>
+    <div id="jq"><p>jQuery is <b>fun</b>!!!</p></div>
+
+    <script>
+        $(function () {
+            $('#append_prepend').click(function(){
+                $('#jq').append("<h1>It's True !!!</h1>")
+               .prepend("<h1>It's True !!!</h1>");
+            });
+            $('#before_after').click(function(){
+                $('#jq').before("<h1>It's True !!!</h1>")
+                .after("<h1>It's True !!!</h1>");
+            });
+            $('#appendTo').click(function(){
+                //대상을 뒤의 자식 제일 뒤쪽으로
+                $('#jq').appendTo("#before_after");
+            });
+            $('h1').click(function(){
+                let btn = $('<button>').text($('#jq').text());
+                $('#appendTo').after(btn);    
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            background-color: indianred;
+            width: 400px;
+            /*            height: 100px;*/
+            color: white;
+            font-size: 50px;
+            text-align: center;
+            line-height: 100px;
+            margin: auto;
+        }
+        button {
+            padding: 10px;
+            flex: auto;
+            margin: 2px;
+        }
+        #btn {
+            display: flex;
+            margin: auto;
+            width: 220px;
+            /*            border: 1px solid red;*/
+        }
+    </style>
+</head>
+<body>
+    <h1 id="now">Watch</h1>
+    <div id="btn">
+        <button id="start" onclick="start()">start</button>
+        <button id="stop" onclick="stop()">stop</button>
+    </div>
+
+    <script>
+        let time;
+
+        function start(){
+            document.getElementById("start").disabled = "true";
+            if(time) stop();
+
+            time = setInterval(gogo, 10);
+
+        }
+
+        function gogo(){
+            let date = new Date();
+            let hour = date.getHours();
+            let min = date.getMinutes();
+            let sec = date.getSeconds();
+            let milli = date.getMilliseconds();
+
+            document.getElementById("now").innerHTML = `${hour}:${min}:${sec}:${milli}`;
+        }
+
+        function stop(){
+            document.getElementById("start").disabled = "false";
+            clearInterval(time);
+        }
+    </script>
+</body>
+</html>

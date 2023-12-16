@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- <body onload="checkCookie()"> -->
+<body>
+    <h1>onload &amp; cookie</h1>
+    <p id="cookie"></p>
+<script>
+    //html 문서의 로딩이 완료되면 실행됨
+    // function checkCookie(){
+    window.onload = function checkCookie(){
+        let txt;
+        if(navigator.cookieEnabled==true){
+            txt = "쿠키 설정: 쓸 수 있음";
+        }else{
+            txt = "쿠키 설정: 쓸 수 없음";
+        }
+        document.querySelector('#cookie').innerHTML = txt;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+
+
+
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+/*
+        @font-face {
+            font-family: NanumSquareWeb;
+            src: local(NanumSquareR),
+            local(NanumSquare),
+            url(NanumSquareR.eot?#iefix) format('embedded-opentype'),
+            url(NanumSquareR.woff) format('woff'),
+            url(NanumSquareR.ttf) format('truetype');
+            font-style: normal;
+            font-weight: normal;
+            unicode-range: U+0-10FFFF;
+        }
+*/
+
+        @font-face {
+            font-family: Dokdo-Regular;
+            src: local(Dokdo-Regular),
+            local(Dokdo-Regular),
+            url(Dokdo-Regular.eot?#iefix) format('embedded-opentype'),
+            url(Dokdo-Regular.woff) format('woff'),
+            url(Dokdo-Regular.ttf) format('truetype');
+            font-style: normal;
+            font-weight: normal;
+            unicode-range: U+0-10FFFF;
+        }
+
+        small {
+            font-family: "Nanum Gothic", sans-serif;
+        }
+
+        sup {
+            font-family: 'Gugi', cursive;
+        }
+
+        s {
+            font-family: 'Kurale', serif;
+        }
+
+        sub {
+            font-family: 'Dokdo-Regular';
+        }

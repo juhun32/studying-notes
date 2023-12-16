@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/main.css">
+    <script src="KobisOpenAPIRestService.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+    </script>
+</head>
+
+<body>
+
+    <h2>영화 오늘의 박스오피스</h2>
+
+
+    <p id="txtHint"></p>
+    <input type="button" onclick="showHint()" value="박스오피스">
+
+    <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+
+
+
+    <script>
+        function showHint() {
+
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function () {
+                //console.log(this.response);
+                processData(this.response)
+                // document.getElementById("txtHint").innerHTML = this.responseText;
+            }
+            xhttp.open("GET", "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=20220901");
+            xhttp.send();
+        }
+        var xValues = [];
+        var yValues = [];
+        function processData(data){
+            let json_data = JSON.parse(data);
+            console.log(json_data);
+            let boxofficeList = json_data.boxOfficeResult.dailyBoxOfficeList;
+            console.log(boxofficeList); 
+             
+            for(let i in boxofficeList){
+                xValues.push(boxofficeList[i].movieNm);
+                yValues.push(boxofficeList[i].salesAmt);
+            }
+            draw();
+        }
+
+    </script>
+    <script>
+        function draw(){
+        var barColors = ["red", "green", "blue", "orange", "brown", "teal", "yellow", "tomato", "navy", "violet"];
+
+        new Chart("myChart", {
+            type: "bar",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                legend: { display: false },
+                title: {
+                    display: true,
+                    text: "오늘의 박스오피스"
+                }
+            }
+        });
+
+    }
+    </script>
+</body>
+
+</html>

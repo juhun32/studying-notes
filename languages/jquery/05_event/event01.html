@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+    <script src="../jq/jquery-3.6.1.min.js"></script>
+</head>
+
+<body>
+    <h1>jQuery Common Events</h1>
+
+    <ul>Mouse Events
+        <li>click</li>
+        <li>dblclick</li>
+        <li>mouseenter</li>
+        <li>mouseleave</li>
+        <li>mouseover</li>
+        <li>wheel</li>
+        <li>hover</li>
+    </ul>
+
+
+    <script>
+        $(function () {
+            // $('ul li:first-child').on('click',function(){
+            // $('ul li:nth-child(1)').on('click',function(){
+            // $('ul li').eq(0).on('click',function(){
+            // $('ul li:first').on('click',function(){
+            // $('h1').next().children().eq(0).on('click',function(){
+            $('h1').siblings().children().eq(0).on('click', function () {
+                $(this).css('background', 'gold')
+            });
+
+        });
+    </script>
+
+    <ul>Keyboard Events
+        <li>keydown</li>
+        <li>keyup</li>
+
+    </ul>
+    <p>당신의 별명은? <input type="text" id="nick"></p>
+    <div>당신의 별명은 <span id="n_name"></span>이군요~</div>
+    <script>
+        $(function () {
+            $('#nick').keyup(function (e) {
+                if (e.keyCode == 13) {
+                    let nick = $(this).val();
+                    $('#n_name').html(nick);
+                }
+
+            });
+        });
+    </script>
+
+    <ul>Form Events
+        <li>submit</li>
+        <li>change</li>
+        <li>focus</li>
+        <li>blur</li>
+    </ul>
+
+    <ul>Document Events
+        <li>ready</li>
+        <li>resize</li>
+        <li>scroll</li>
+    </ul>
+
+    <p>특정 엘리먼트의 이벤트가 다른 엘리먼트의 이벤트 호출 가능</p>
+    <script>
+        $(function(){
+            $('#n_name').click(function(){
+                $('#nick').attr('placeholder', '당신의 별명을 알려주세요~');
+            });
+
+            $('p:last').mouseenter(function(){
+                $('#n_name').click();
+            })
+            .mouseleave(function(){
+                $(this).css("background", "brown");
+            });
+        });
+    </script>
+</body>
+
+</html>

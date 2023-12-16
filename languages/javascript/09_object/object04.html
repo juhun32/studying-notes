@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <h2 id="title"></h2>
+    <p id="cars"></p>
+
+    <script>
+        //name, age, cars - Person
+        function Person(name, age, cars) {
+            this.name = name ; 
+            this.age = age ;
+            this.cars = cars;
+
+            this.myCars = function(){
+                return this.name + " : " + this.cars;
+            }
+        }
+
+        let tom = new Person("tom", 33, ["benz", "audi", "cadillac"]);
+        console.log(tom);
+        console.log(tom.myCars());
+        document.getElementById("title").innerHTML = `${tom.name}'s cars`;
+        let result = "";
+        for(let idx in tom.cars){
+            result += tom.cars[idx] + "<br>";
+        }
+        document.getElementById("cars").innerHTML = result;
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aria</title>
+    <style type="text/css">
+        [role="button"] {
+         padding:3px;
+         border: 1px solid #CCC;
+        }
+        [role="button"][aria-pressed="true"] {
+         border: 2px solid #000;
+        }
+       </style>
+       <script type="text/javascript">
+        function handleBtnClick(event) {
+          event = event || window.event;
+          var pressed = event.target.getAttribute("aria-pressed") == "true";
+          //change the aria-pressed value as the button is toggled:
+          event.target.setAttribute("aria-pressed", pressed ? "false" : "true");
+          //... (perform the button's logic here)
+        }
+      
+        function handleBtnKeyUp(event) {
+          event = event || window.event;
+          if (event.keyCode === 32) { // check for Space key
+            handleBtnClick(event);
+          }
+        }
+       </script>
+</head>
+<body>
+    <h1>aria</h1>
+    <p>ARIA는 키보드로 움직이거나 숨기는 일 등을 하는 html5에 추가된 속성</p>
+    <button role="button" aria-pressed="false" onclick="handleBtnClick(event)" onKeyUp="handleBtnKeyUp(event)">Edit Mode</button>
+<br>
+<!--
+ input 태그의 타입을 image로 하고 그것의 역할(role)을 버튼으로 설정하고 클릭할 때 다음으로 이동하도록 설정. 바보 같지만 때에 따라 유용하게 사용할 수도 있다
+-->
+ <input type="image" src="../../../images/1.gif" role="button" onclick="location.href='http://www.daum.net'">
+ <br>
+<a href="http://webdir.tistory.com/89" alt="WEBDIR">http://webdir.tistory.com/89</a>
+</body>
+</html>

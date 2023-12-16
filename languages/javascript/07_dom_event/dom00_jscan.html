@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <h1>자바 스크립트가 DOM을 가지고 할 수 있는 일</h1>
+    <ul>
+        <li>페이지 내의 모든 HTML 엘리먼트를 변경</li>
+        <li>모든 HTML 태그의 속성을 변경</li>
+        <li>모든 css 스타일을 변경</li>
+        <li>페이지 내의 특정 HTML 엘리먼트와 속성을 삭제</li>
+        <li>새로운 엘리먼트와 속성을 생성 추가</li>
+        <li>페이지 내 모든 HTML 이벤트에 반응</li>
+        <li>페이지 내에서 새로운 HTML 이벤트 생성</li>
+        <li>node - parentNode
+            childNodes[nodenumber]
+            firstChild
+            lastChild
+            nextSibling
+            previousSibling</li>
+    </ul>
+
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <script>
+        document.getElementById("demo").innerHTML = "<b>Hello World!</b>";
+        document.getElementById("demo1").innerText = "<b>Hello World!</b>";
+        document.getElementById("demo").childNodes[0] = "<s>";
+    </script>
+</body>
+</html>

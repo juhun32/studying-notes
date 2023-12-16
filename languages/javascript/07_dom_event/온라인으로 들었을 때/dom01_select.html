@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+    <h1>DOM element 선택 방법</h1>
+    <img src="/images/0.jpg" alt="">
+    <ul>
+        <li class="sky">document.getElementById(id)</li>
+        <li>document.getElementsByTagName(name)</li>
+        <li class="sky">document.getElementsByClassName(name)</li>
+        <li>document.querySelector[All](css selector);</li>
+        <li>document.body[forms, images] - dom object</li>
+        <li>node - parentNode,
+            childNodes[nodenumber],
+            firstChild,
+            lastChild,
+            nextSibling,
+            previousSibling</li>
+    </ul>
+
+    <p id="intro">Finding HTML Elements by Id</p>
+    <p class="intro">오늘은 불금 ㅋㅋㅋ</p>
+    <p class="intro">오늘은 주금 ㅋㅋㅋ</p>
+
+    <p id="demo"></p>
+
+    <img src="/images/0.jpg" alt="">
+
+    <script>
+        const element = document.getElementById("intro");
+
+        document.getElementById("demo").innerHTML =
+            "The text from the intro paragraph is: " + element.innerHTML;
+
+        let elems = document.getElementsByTagName("p");
+        console.log(elems);
+        elems[0].innerHTML = "wow";
+
+        let sky = document.getElementsByClassName("sky");
+        for(let sk of sky){
+            sk.style.backgroundColor ="skyblue";
+        };
+
+        let ul_p = document.querySelector("ul + p");
+        ul_p.style.fontSize = "30px";
+
+        const p_intros = document.querySelectorAll("p.intro");
+        console.log(p_intros);
+        for(let p of p_intros){
+            p.style.backgroundColor ="hotpink";
+        };
+
+        document.images[0].onclick = function(){
+            document.images[0].src = "/images/1.jpg";
+        }
+        document.images[1].onmouseover = function(){
+            document.images[1].src = "/images/1.jpg";
+        }
+        document.images[1].onmouseleave = function(){
+            document.images[1].src = "/images/0.jpg";
+        }
+        
+
+    </script>
+</body>
+
+</html>

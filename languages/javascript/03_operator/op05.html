@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <h1>초간단 건강 측정기</h1>
+    <p>체중: <input type="text" id="weight"></p>
+    <p>신장: <input type="text" id="height"></p>
+    <p>이름: <input type="text" id="name"></p>
+
+    <button type="button" onclick="check()">건강 측정</button>
+    <hr>
+    <div class="sky"><span id="customer">~~</span>님은 <span id="result">~~</span> 입니다.</div>
+
+
+    <script>
+        const check = function(){
+            let weight = parseInt(document.getElementById("weight").value);
+            let height = parseInt(document.getElementById("height").value);
+            document.getElementById("customer").innerHTML = document.getElementById("name").value;
+
+            // 체중이 (키 - 100)의 90% 에서 +-5 범위 안에 있으면 "적정 체중", 그렇지 않으면 "체중 관리 필요"
+
+            let normal = (height - 100) * 0.9;
+
+            //let result = document.getElementById("result");
+            // if(weight <= normal + 5 && weight >= normal -5){
+            //     result.innerHTML = "적정 체중";
+            // }else{
+            //     result.innerHTML = "체중 관리 필요";
+            // }
+            document.getElementById("result").innerHTML = weight <= normal + 5 && weight >= normal -5 ? "적정체중" : "체중 관리 필요";
+        
+        }
+
+    </script>
+</body>
+</html>

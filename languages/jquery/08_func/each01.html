@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+   <style>
+    div{
+        width: 100px; height: 100px; margin: 10px;
+    }
+   </style>
+    <script src="../jq/jquery-3.6.1.min.js"></script>
+</head>
+<body>
+    <ul>
+        <li>foo</li>
+        <li>bar</li>
+    </ul>
+    <h2 id="li_content"></h2>
+    <hr>
+    <button id="changeColor">색깔 바꾸기</button>
+    <div style="background-color: red" ></div>
+    <div style="background-color: yellow"></div>
+    <div style="background-color: green"></div>
+
+    <script>
+        $(function(){
+            console.log($('li'));
+            $('li').each(function(index, item){
+                console.log(item);
+                console.log($(item).text());
+                console.log($(this).text());
+                $('#li_content').append($('<p>').text(index+" : " + $(this).text()));
+            });
+            //$('#li_content').append($('<p>').text($('li').text() + " / "));
+
+            $('#changeColor').click(function(){
+                // $('div').css("background-color", "teal");
+                let div = $('div');
+                let leng = div.length;
+                div.each(function(index, item){
+                    //console.log($(this).css("background-color"));
+                    //console.log("------------");
+
+                    // if($(this).css("background-color") === "red"){
+                    //     $(this).css("background-color", "yellow"); 
+                    // }else if($(this).css("background-color") === "yellow"){
+                    //     $(this).css("background-color", "green"); 
+                    // }else{
+                    //     $(this).css("background-color", "red"); 
+                    // }
+                    // console.log(this.style.backgroundColor);
+                    if(this.style.backgroundColor == "red"){
+                        this.style.backgroundColor = "yellow"; 
+                    }else if(this.style.backgroundColor == "yellow"){
+                        this.style.backgroundColor = "green"; 
+                    }else{
+                        this.style.backgroundColor = "red"; 
+                    }
+                    // let color = div[0].style.backgroundColor;
+                    // if(index < leng - 1){
+                    //     $(this).css("background-color", $(this).next().css("background-color"));
+                    // }else{
+                    //     $(this).css("background-color", color);
+                    // }
+                    
+                });
+
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pos{background-color: coral;}
+        .box{width: 200px; height: 50px; text-align: center; border: 1px solid red; margin-bottom: 10px;}
+        .static{position: static;}
+        .relative{position: relative; top: 50px; left: 250px; height: 200px;}
+        .absolute{position: absolute; top: 50px; left: 300px; }
+        .absolute_in_r{position: absolute; top: 50px; left: 50px;  width: 100px; background-color: green;}
+        .fixed{position: fixed; bottom: 10px; right: 10px; width: 100px; background-color: teal;}
+        .sticky{width:600px; background-color: #555; color: white; 
+            position: sticky; top: 10px;}
+    </style>
+</head>
+<body>
+    <h1>position</h1>
+    <div class="pos">
+        <h3>특정 요소의 위치를 정하는 다섯 가지 방법</h3>
+    <ul>
+        <li>static: 특정 위치 지정 없이 본래 흐름 상의 위치</li>
+        <li>relative: 자신의 본래 위치에 대한 상대적 위치</li>
+        <li>absolute: 가장 가까운, 특정 위치로 고정된, 블록형 조상에 대한 상대적 위치</li>
+        <li>fixed: viewport에 대한 상대적 위치에 고정</li>
+        <li>sticky: 사용자의 스크롤을 따라 움직이다가 특정위치에 고정</li>
+    </ul>
+   </div>
+   <div class="box static">static</div>
+   <div class="box relative">relative
+    <div class="box absolute_in_r">absolute_in_r</div>
+   </div>
+    <div class="box absolute">absolute</div>
+   <div class="box fixed">fixed</div>
+   <div class="box sticky">sticky</div> 
+   <div style="height: 2000px; width:10px; margin:auto;">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+</body>
+</html>

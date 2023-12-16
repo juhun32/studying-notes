@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+    <script src="../jq/jquery-3.6.1.min.js"></script>
+</head>
+<body>
+    <h1>테이블 만들기</h1>
+    <input type="text" id="row_num">
+    <button id="row">행추가</button>
+    <input type="text" id="col_num">
+    <button id="col">열추가</button>
+
+    <table id="myTable">
+    </table>
+    <!-- <div id="table"> -->
+        <script>
+            
+            
+            $('#row').on('click', function(){
+                let row = $('#row_num').val();
+                for(let i = 0; i < row; i++){
+                $('#myTable').append('<tr><td></td></tr>')
+            }
+            });
+            
+            $('#col').on('click', function(){
+                let col = $('#col_num').val();
+                for(let i = 0; i < col; i++){
+                $('#myTable > tr').append('<td></td>')
+            }
+            });
+
+            
+        </script>
+</body>
+</html>

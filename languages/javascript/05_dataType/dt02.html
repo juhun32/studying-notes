@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <h2>자바스크립트에서 문자열에 더하기 연산하면 문자열이 된다.</h2>
+    <p>그러나 숫자인 문자열을 뺄셈, 곱셈, 나눗셈 연산하면 숫자로 연산된다.</p>
+
+    <script>
+        var a = "7";
+        var b = "5";
+
+        document.write(a + b);
+        document.write("<br>");
+        document.write(a + b + 38);
+        document.write("<br>");
+        document.write(a - b);
+        document.write("<br>");
+        document.write(a * b);
+        document.write("<br>");
+        document.write(a / b);
+        document.write("<hr>");
+
+        //eval() => 문자열을 식으로 해석하는 함수
+
+        document.write(eval("7 + 5"));
+        document.write("<br>");
+        document.write("7" + "5");
+        document.write("<br>");
+        document.write(eval("7 + 5"));
+        document.write("<br>");
+        document.write(eval(a + "+" + b));
+        document.write("alert('wow');");
+        document.write("<br>");
+        document.write(eval("alert('wow');"));
+    </script>
+</body>
+</html>

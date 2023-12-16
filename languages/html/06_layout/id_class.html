@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{
+            background-color: tomato; color: white; padding: 10px;
+        }
+        ul{
+            list-style-type: none;
+        }
+        ul li{
+          background-color: cadetblue; margine: 5px;  
+        }
+        h2.city{
+          background-color: blue; margine: 5px;  
+        }
+        h2.asia{
+          background-color: green; margine: 5px;  
+        }
+       #sun{
+          background-color: gold; margine: 5px;  
+        }
+    </style>
+</head>
+<body>
+    <h2>id &amp; class</h2>
+    <ul>
+        <li>id: 페이지 내에서 특정 element 하나를 선택하기 위한 명칭</li>
+        <li>class: 페이지 내에서  특정 element들을 한꺼번에 선택하기 위한 명칭</li>
+    </ul>
+    <h2 class="city">London</h2>
+    <p>London is a capital of England</p>
+    <h2 class="city">Paris</h2>
+    <p>Paris is a capital of France</p>
+    <h2 class="city">Berlin</h2>
+    <p>Berlin is a capital of Germany</p>
+    <h2 class="city asia">Seoul</h2>
+    <p>Seoul is a capital of Korea</p>
+    <h2 id="sun">Sun</h2>
+    <p>Sun is a capital of Solar System</p>
+
+    <button type="button" onclick="erase()">sun 제거</button>
+    <button type="button" onclick="appear()">sun 부활</button>
+    
+
+    <script>
+        var sun = document.getElementById("sun");
+        function erase(){
+            sun.style.display = "none";
+        }
+        function appear(){
+            sun.style.display = "block";
+        }
+    </script>
+</body>
+</html>

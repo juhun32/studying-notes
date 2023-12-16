@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+        //object 생성을 위한 틀 - class
+        function Person(firstName, lastName, id) {
+            //property, field, attribute: 객체의 특징, 속성
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.id = id;
+            //method
+            this.fullname = function(){
+                return this.firstName + " " + this.lastName;
+            }
+            this.smile = function (sound){
+                console.log(sound);
+            }
+        }
+        
+        const tom = new Person("cruize", "tom", 5514);
+        let mary = new Person("jones", "mary", 3231);
+        const a = tom;
+        console.log(tom);
+        console.log(a);
+        tom.firstName = "ace";
+        console.log(tom);
+        console.log(a);
+        console.log(tom.firstName);
+        console.log(tom["firstName"]);
+        console.log(tom.id);
+        console.log(tom.fullname());
+        tom.smile("hahaha!");
+
+        // //literal 방식 - 직접 값을 넣어서 object 생성
+        // const jane = { 
+        //     firstName: 'fonda', 
+        //     lastName: 'jane', 
+        //     id: 7991,
+        //     fullname : function(){
+        //         return this.firstName + " " + this.lastName
+        //     },
+        //     smile : function (sound){
+        //         console.log(sound);
+        //     } 
+        // };
+        // console.log(jane);
+
+
+        // let persons = [tom, mary, jane];
+        // for (let idx in persons) {
+        //     //console.log(persons[idx].firstName);
+        //     console.log(persons[idx].fullname());
+        //     persons[idx].smile("haha!");
+        //     console.log("---------------");
+        // }
+    </script>
+</body>
+
+</html>

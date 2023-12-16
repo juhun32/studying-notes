@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>main-v1</title>
+
+    <link rel="stylesheet" href="./css/style-main.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+
+    <script>
+        $(function () {
+            $(".headC").click(function () {
+                $(".headB").slideToggle();
+            });
+        });
+    </script>
+
+    <style>
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="main-top">
+            <div class="list">
+
+                <div class="container-small">
+                    <a href="main-v1.html" class="headA">test NAME</a>
+                    <button type="button" class="headC">
+                        <span class="fa fa-bars" title="MENU"></span>
+                    </button>
+                </div>
+
+                <nav class="headB">
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="#contents">CONTENTS</a></li>
+                        <li><a href="./html/contact.html">CONTACT</a></li>
+                        <li><a href="#about">ABOUT</a></li>
+                        <li><a href="">QnA</a></li>
+                    </ul>
+                </nav>
+
+                <div class="rightMain">
+                    <form name="search">
+                        <input type="text" class="input" name="txt" onmouseout="this.value = ''; this.blur();">
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="main">
+
+            <p class="text-big">
+                About US
+            </p>
+
+            <p class="text-small">
+                About us description line
+            </p>
+
+            <p class="center">
+                <a href="#Order" style="text-decoration:none;color:white;">
+                    Below are the people who
+                    works in our company
+                </a>
+            </p>
+
+        </div>
+    </main>
+    <div class="contents01"></div>
+    <div class="fixed01"></div>
+    <div class="contents02"></div>
+    <div class="fixed02"></div>
+    <div class="contents03"></div>
+    <div class="fixed03"></div>
+    <div class="contents04"></div>
+    <footer></footer>
+</body>
+
+</html>

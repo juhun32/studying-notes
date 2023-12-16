@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+    <h2>JavaScript Functions</h2>
+    <p>call() : 어떤 객체의 메소드를 실행하면서 메소드가 사용하는 프로퍼티 값을 오브젝트로 전달한다.
+    </p>
+
+    <p id="demo"></p>
+
+    <script>
+        const person = {
+            firstName: "John",
+            lastName: "Doe",
+            fullName: function () {
+                return this.firstName + " " + this.lastName;
+            },
+            travel: function (city, country) {
+                return this.firstName + " " + this.lastName + "," + city + "," + country;
+            }
+        }
+        // const person1 = {
+        //     firstName: "John",
+        //     lastName: "Doe"
+        // }
+        const person2 = {
+            firstName: "Mary",
+            lastName: "Doe"
+        }
+        // document.getElementById("demo").innerHTML = person.fullName();
+        // document.getElementById("demo").innerHTML = person.fullName.call(person2); 
+        // document.getElementById("demo").innerHTML = person.travel.call(person2, "Oslo", "Norway"); 
+
+        document.getElementById("demo").innerHTML = person.travel.apply(person2, ["Oslo", "Norway"]);
+
+        //apply 함수 이용하여 특정 메소드에 array 전달 - 첫 번째 값은 무시
+        console.log(Math.max(1, 2, 3));
+        //console.log(Math.max([1,2,3]));
+        console.log(Math.max.apply(null, [1, 2, 3]));
+        console.log(Math.max.apply(1000, [1, 2, 3]));
+
+        //bind() - 메소드 빌려쓰기
+        const member = {
+            firstName: "Hege",
+            lastName: "Nilsen",
+        }
+
+        let fName = person.fullName.bind(member);
+        console.log(fName);
+        console.log(fName());
+
+        //callback - this값 미리 부여하는 효과
+        const person3 = {
+            firstName: "John",
+            lastName: "Doe",
+            display: function () {
+                console.log(this.firstName + " " + this.lastName);
+            }
+        }
+        setTimeout(person3.display, 3000);
+
+        let display2 = person3.display.bind(person3);
+        console.log(display2);
+        setTimeout(display2, 3000);
+    </script>
+</body>
+
+</html>

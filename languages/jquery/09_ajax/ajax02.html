@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+    <script src="../jq/jquery-3.6.1.min.js"></script>
+</head>
+<body>
+    <button type="button" id="btn">데이터가 필요해 ㅋㅋㅋ</button>
+    <div id="txt">Data here!</div>
+    <script>
+        let target = $('#txt');
+        $(function(){
+            $('#btn').click(function(){
+                let url = "test.json";
+                
+                $.getJSON({
+                // $.get({  //$.post({})
+                // $.ajax({                 
+                    // type: "GET", //"POST", "PUT", "DELETE"
+                    url: url, //ajax 요청을 보낼 주소(경로)
+                    // contentType: "application/text",  //요청 시 보내는 데이터의 mime 타입
+                    // dataType: "json", //서버에서 받으려는 데이터의 타입
+                    success: function(resp){ //요청이 성공했을 때의 콜백 함수
+                        console.log("<<<<<<<<<<<< resp >>>>>>>>>>>>> ");
+                        console.log(resp);
+                        console.log("------------- resp -------------");
+                        print(resp);
+                    },
+                    error: function(err){ //요청이 실패했을 때의 콜백 함수
+                        console.log("err >>> ", err);
+                    },
+                    complete: function(){ //요청 성공 여부와 무관하게 항상 실행
+                        // alert("wow");
+                    }
+
+                });
+                //1.6 이후 jquery ajax - Promise 객체 사용
+                // })
+                // .done(function(){
+                // })
+                // .fail(function(){
+                // })
+                // .always(function(){
+                // });
+            });
+        });
+
+        //ajax 요청으로 받아온 데이터를 뿌려주는 함수
+        function print(friend){
+            let result = "";
+            result += "<h2>"+friend.name+"의 애완동물</h2>";
+            for(let i in friend.pets){
+                console.log(friend.pets[i]);
+                let pet = friend.pets[i]; 
+                for(let key in pet){
+                    console.log(pet[key]);
+                    if(key == "kind"){
+                        result += "<p>" + pet[key] + "</p>";
+                    }else{
+                        result += "<ul>";
+                        for(let n in pet[key]){
+                            console.log(pet[key][n]);
+                            result += "<li>"+pet[key][n]+"</li>";
+                        }
+                        result += "</ul>";
+                    }
+                }
+            }
+            target.html(result);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<style>
+    #section1{padding-top: 50px; background-color: burlywood;height: 500px;}
+    #section2{padding-top: 50px; background-color: tomato;height: 500px; color: white}
+    #section3{padding-top: 50px; background-color: teal;height: 500px; color: white}
+    #section41{padding-top: 50px; background-color: coral;height: 500px; color: white}
+    #section42{padding-top: 50px; background-color: cadetblue;height: 500px; color: white}
+    .navbar{margin-bottom: 0}
+    .affix {
+        top: 0;
+        width: 100%;
+        z-index: 9999 !important;
+  }
+
+  .affix + .container-fluid {
+    padding-top: 70px;
+  }
+    
+    #MoveTop{display: block; width: 50px; height: 50px; background-color: rgba(0,0,255,0.5); color: white; border-radius: 10px; text-align: center;
+    line-height: 50px; text-decoration: none; position: fixed; 
+        z-index: 999 !important; right: 10px; bottom: 10px}
+</style>
+
+
+<!--<body>-->
+<body data-spy="scroll" data-target=".navbar" data-offset; 50px>
+   <div id="wrap">
+       <a id="MoveTop" href="#">TOP</a>
+    <div class="container-fluid" style="background-color: red; color: white; height: 200px">
+        <h1>Scrollspy &amp; Affix &amp; Top 버튼 연습</h1>
+        <h3>스크롤시 고정되는 메뉴바</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="197">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand" >My Style</a>
+            </div>
+            <div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#section1">Section 1</a></li>
+                        <li><a href="#section2">Section 2</a></li>
+                        <li><a href="#section3">Section 3</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" href="#" data-toggle="dropdown">Section 4 <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#section41">Section 4-1</a></li>
+                                <li><a href="#section42">Section 4-2</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <div id="section1" class="container-fluid">
+        <h1>Section 1</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <div id="section2" class="container-fluid">
+        <h1>Section 2</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <div id="section3" class="container-fluid">
+        <h1>Section 3</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <div id="section41" class="container-fluid">
+        <h1>Section 4-1</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <div id="section42" class="container-fluid">
+        <h1>Section 4-2</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+   </div> 
+<!--    smoothScrool : scrollTop과 hash 값 이용-->
+    <script>
+        $(function(){
+            $('body').scrollspy({target:".navbar", offset:50});
+            $('#myNavbar a').on('click', function(event){
+               if(this.hash !==""){
+                   event.preventDefault();
+                   var hash = this.hash;
+                   $('html, body').animate({scrollTop:$(hash).offset().top}, 400, function(){
+                       window.location.hash = hash;
+                   });
+               } 
+            });
+        });
+    </script>
+<!--    top button-->
+    <script>
+        
+        $(function(){
+           $(window).scroll(function(){
+              console.log($(window).scrollTop());
+              if($(this).scrollTop() > 200){
+                  $('#MoveTop').fadeIn();
+              }else{
+                  $('#MoveTop').fadeOut();
+              }
+           }); 
+        });
+        
+        $('#MoveTop').click(function(){
+            $('html, body').animate({scrollTop:0}, 400);
+        });
+    </script>
+</body>
+</html>

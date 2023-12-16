@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <h1>break, continue</h1>
+    <p>break: 특정 조건에서 for, while 등의 반복문을 빠져나가는 명령</p>
+    <p>continue: 특정 조건에서 이후의 명령을 수행하지 않고 반복문의 다음 차례로 이동</p>
+    <script>
+
+        for(let i = 1; i <= 10; i++){
+            if(i % 3 == 0){
+                // break;
+                 continue;
+            }
+            console.log(i);
+        }
+        console.log("--------------------");
+        for(let i = 2; i <= 9; i++){
+                // if(i == 5){
+                //     // break;
+                //     continue;
+                // }
+            for(let j = 1; j <= 9; j++){
+                if(j == 5){
+                    // break;
+                    continue;
+                }
+            console.log(i + "*" + j + "=" + i*j)
+        }
+    }
+    console.log("--------------------");
+    
+    let num = 0;
+    while(true){
+        num++;
+        if(num == 7){
+            break;
+        }
+        console.log(num);
+    }
+
+
+    </script>
+</body>
+</html>

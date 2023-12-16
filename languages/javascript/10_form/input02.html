@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+    <h1>로그인</h1>
+    <form action="#" method="post" name="frm" id="frm">
+        <label for="id">id: </label>
+        <input type="text" name="id" id="id"><br>
+        <label for="password">password: </label>
+        <input type="password" name="password" id="password"><br>
+        <input type="hidden" name="loginType" value="admin">
+
+        <button type="button" onclick="check()">로그인</button>
+
+    </form>
+
+    <script>
+        //let frm = document.forms[0];
+        // let frm = document.frm;
+        function check() {
+            let frm = document.getElementById("frm");
+            console.log(frm.id);
+            if (frm.id.value == "" || frm.id.value == null) {
+                alert("id 입력하셈~");
+                frm.id.focus();
+                return;
+            }
+            let pw_value = frm.password.value;
+            if (pw_value == "" || pw_value == null) {
+                alert("password 입력하셈~");
+                frm.password.focus();
+                return;
+            }
+            //if (pw_value.length < 8 || pw_value.length >12){
+            if (!(/^[A-Za-z0-9]{8,12}$/.test(pw_value))) {
+                alert("password 길이는 8자리 이상 12자리 이하의 영문자, 숫자여야 합니다.");
+                frm.password.focus();
+                return;
+            }
+            frm.action = "http://www.daum.net";
+            frm.method = "get";
+            frm.submit();
+        }
+    </script>
+</body>
+
+</html>

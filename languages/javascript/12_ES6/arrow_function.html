@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+    <h1>arrow_function</h1>
+
+    <p>This example shows the syntax of an Arrow Function, and how to use it.</p>
+
+    <p>let myFunction = (a, b) => a * b;</p>
+    <p id="demo"></p>
+
+    <script>
+        
+        // let myFunction = function(a, b){
+        //     return a * b;
+        // }
+        let myFunction = (a, b) => a * b;
+
+        let arrow1 = a => console.log(a);
+        let arrow2 = () => console.log('wow');
+        let arrow3 = (a, b) => {console.log(a * b); return a * b}
+        
+        document.getElementById("demo").innerHTML = myFunction(4, 5);
+    </script>
+</body>
+
+</html>

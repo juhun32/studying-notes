@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <h1>증감 연산자</h1>
+
+    <p>++, --</p>
+    <p>a++ : a = a + 1 </p>
+    <p>a-- : a = a - 1 </p>
+    <p>전위 연산(++a)일 경우 연산순위가 가장 빠르고 후위 연산(a++)일 경우 가장 늦다</p>
+    <script>
+        let a = 35;
+        console.log("a >>>> ", a); //35
+        a++;
+        console.log("a >>>> ", a); //36
+        a--;
+        console.log("a >>>> ", a); //35
+        
+        let b = a++;
+        console.log("b >>>> ", b); //35
+        console.log("a >>>> ", a); //36
+        b = a--;
+        console.log("b >>>> ", b); //36
+        console.log("a >>>> ", a); //35
+        console.log("a++ >>>> ", a++); //35
+        console.log("a >>>> ", a); //36
+        
+        b = ++a;
+        console.log("b >>>> ", b); //37
+        console.log("a >>>> ", a); //36
+
+        a = 35, b = 20;
+        let c = ++b + a--;
+        console.log("c >>> ", c);
+        console.log("b >>> ", b);
+        console.log("a >>> ", a);
+    </script>
+</body>
+</html>

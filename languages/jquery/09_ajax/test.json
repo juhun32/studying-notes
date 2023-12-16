@@ -1,0 +1,10 @@
+{
+    "name": "tom",
+    "age": 33,
+    "photo": "../../images/susi.gif",
+    "pets": [
+        { "kind": "dog", "name": ["thunder", "sky", "merry"] },
+        { "kind": "cat", "name": ["sally", "terry", "molly"] },
+        { "kind": "bird", "name": ["gori", "pori"] }
+    ]
+}

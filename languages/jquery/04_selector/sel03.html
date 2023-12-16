@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="../style.css"> -->
+    <script src="../jq/jquery-3.6.1.min.js"></script>
+</head>
+<body>
+    <h2>Descendants</h2>
+    <p>
+        <span><em>one</em></span>
+        <em>two</em>
+        <em>three</em>
+    </p>
+
+    <div>
+        <span><em>four</em></span>
+        <em>five</em>
+        <em>six</em>
+    </div>
+
+    <hr size="3" noshade>
+
+    <div>children으로 검색된 elements: <span class="result1"></span></div>
+    <div>띄어쓰기(후손) 로 검색된 elements: <span class="result2"></span></div>
+    <div>&gt;(자식)로 검색된 elements: <span class="result3"></span></div>
+
+    <script>
+        $(document).ready(function(){
+            let a = $('p').children();
+            console.log(a);
+            let txt = "";
+            a.css("background", "yellow").each(function(){
+                txt = $(this).text();
+                console.log(txt);
+                $('.result1').append(txt + " ").css("background", "yellow");
+            });
+            
+            $('div em').css("background", "skyblue").each(function(){
+                txt = $(this).text();
+                console.log(txt);
+                $('.result2').append(txt + " ").css("background", "skyblue");
+            });
+
+            $('div > em').css("background", "pink").each(function(){
+                txt = $(this).text();
+                console.log(txt);
+                $('.result3').append(txt + " ").css("background", "pink");
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+    <h1>array iteration</h1>
+    <h2>JavaScript Array.forEach()</h2>
+    <p>Calls a function once for each array element.</p>
+
+    <p id="demo"></p>
+    <h2>JavaScript Array.map()</h2>
+    <p id="demo2"></p>
+    <h2>JavaScript Array.filter()</h2>
+    <p id="demo3"></p>
+    <h2>JavaScript Array.reduce()</h2>
+    <p id="demo4"></p>
+    <script>
+        const numbers = [45, 4, 9, 16, 25];
+        let txt = "";
+        //foreach 함수: 하나씩 꺼내서 특정 함수 적용
+        numbers.forEach(myFunction);
+        // for(let i = 0; i < numbers.length; i++){
+        //     myFunction(numbers[i], i ,numbers);
+        // }
+        document.getElementById('demo').innerHTML = txt;
+
+        function myFunction(value, index, array) {
+            txt += value + "/ " + index + " / " + array + "<br>";
+        }
+
+
+        //map 함수: 요소를 하나씩 꺼내서 특정 함수에 적용하고 그 결과값으로 새로운 어레이 반환
+        const numbers1 = [45, 4, 9, 16, 25];
+        const numbers2 = numbers1.map(myFunction2);
+
+        document.getElementById("demo2").innerHTML = numbers2;
+
+        function myFunction2(value, index, array) {
+            return value * 2;
+        }
+
+
+
+        //filter 함수: 요소들을 하나씩 꺼내 특정 함수의 판정식을 적용하고 통과한 요소로만 어레이 만들어 반환
+        const over18 = numbers.filter(myFunction3);
+
+        document.getElementById("demo3").innerHTML = over18;
+
+        function myFunction3(value, index, array) {
+            return value > 18;
+        }
+
+        //reduce 함수: 요소들을 하나씩 꺼내 특정 함수로 처리하여 최종적인 값 하나를 반환
+        let sum = numbers.reduce(myFunction4);
+
+        document.getElementById("demo4").innerHTML = "The sum is " + sum;
+
+        function myFunction4(total, value, index, array) {
+            return total + value;
+        }
+
+        //erery: 요소들을 하나씩 꺼내 특정 함수로 판정하여 전체가 통과할 경우 true, 하나라도 통과하지 못하면 false
+        //some: 요소들을 하나씩 꺼내 특정 함수로 판정하여 하나라도 통과하면 true, 전체가 통과하지 못하면 false
+        let allOver18 = numbers.every(myFunction5);
+        //let allOver18 = numbers.some(myFunction5);
+
+        document.getElementById("demo5").innerHTML = "All over 18 is " + allOver18;
+
+        function myFunction(value, index, array) {
+            return value > 18;
+        }
+        
+    </script>
+</body>
+
+</html>

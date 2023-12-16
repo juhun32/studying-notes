@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+    <h1>async &amp; await</h1>
+
+    <p id="demo"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+
+    <script>
+        function myDisplayer(some) {
+            document.getElementById("demo").innerHTML = some;
+        }
+
+        async function myFunction() {
+
+            return "Hello";
+        }
+
+        myFunction().then(
+            function (value) { myDisplayer(value); },
+            function (error) { myDisplayer(error); }
+        );
+
+
+        async function myDisplay() {
+            let myPromise = new Promise(function (resolve, reject) {
+                resolve("I love You !!");
+            });
+            document.getElementById("demo2").innerHTML = await myPromise;
+        }
+
+        myDisplay();
+
+
+        async function getFile() {
+            let myPromise = new Promise(function (resolve) {
+                let req = new XMLHttpRequest();
+                req.open('GET', "mycar.html ");
+                req.onload = function () {
+                    if (req.status == 200) {
+                        resolve(req.response);
+                    } else {
+                        resolve("File not Found");
+                    }
+                };
+                req.send();
+            });
+            document.getElementById("demo3").innerHTML = await myPromise;
+        }
+
+        getFile()
+    </script>
+
+
+</body>
+
+</html>

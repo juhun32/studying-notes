@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+    <h1>if - 조건에 따라 실행 방향 결정</h1>
+
+    <h2>당신은 <span id="age"></span>세이므로 <span id="drink"></span>를 마시셈 ㅋㅋㅋ</h2>
+
+    <script>
+        // 18살 이상이면 소주 - if(){}
+        // 15 ~ 18 커피 - else if(){}
+        // 15 미만 우유 - else{}
+
+        // prompt로 입력 받아 처리
+        let answer = prompt("age >>>> ", 25);
+        document.getElementById("age").innerHTML = answer;
+
+        if(answer >= 18){
+            document.getElementById("drink").innerHTML = "소주";
+        }else if(answer >= 15){
+            document.getElementById("drink").innerHTML = "커피";
+        }else{
+            document.getElementById("drink").innerHTML = "우유";
+        }
+
+        //document.getElementById("drink").innerHTML = answer >= 18? "소주" : answer >= 15 ? "커피" : "우유";
+
+
+
+    </script>
+</body>
+
+</html>

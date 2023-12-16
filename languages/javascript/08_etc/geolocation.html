@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 onclick="location.href = 'https://www.w3schools.com/'">GeoLocation: latitude / longitude</h1>
+
+    <p id="myLocation"></p>
+
+    <script>
+        let myLoc = document.querySelector('#myLocation');
+        console.log(myLoc);
+        //myLoc.innerHTML =  "wow";
+        //deprecated - 안 쓴다 ㅋㅋㅋ
+        navigator.geolocation.getCurrentPosition(function(position){
+            myLoc.innerHTML =  `위도: ${position.coords.latitude}, 경도: ${position.coords.longitude}`;
+        });
+    </script>
+</body>
+</html>

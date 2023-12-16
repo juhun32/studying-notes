@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       table, td, th{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td{text-align: center;}
+    </style>
+</head>
+<body>
+    <table border="1" width="100%" summery="직원별 판매성과 현황">
+        <caption>직원별 판매성과 현황</caption>
+            <colgroup>
+                <col width="40">
+                <col width="30">
+                <col width="30">
+        </colgroup>
+        <thead>
+            <tr>
+                <th scope="col">직원명</th>
+                <th>구분</th>
+                <th>판매액</th>
+            </tr>   
+        </thead>
+        <tfoot>
+            <th scpoe="row" >총계</th>
+            <td></td>
+            <td>51조 12억</td>
+        </tfoot>
+        <tbody>
+            <tr>
+                <th scope="row" rowspan="2">강감찬</th>
+                <td>상반기</td>
+                <td>12억</td>
+            </tr>
+            <tr>
+                <td>하반기</td>
+                <td>5조</td>
+            </tr>
+            <tr>
+                <th scope="row" rowspan="2">을지문덕</th>
+                <td>상반기</td>
+                <td>19조</td>
+            </tr>
+            <tr>
+                <td>하반기</td>
+                <td>27조</td>
+            </tr>
+        </tbody>
+        
+
+    </table>
+</body>
+</html>

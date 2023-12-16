@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<myFriend>
+    <Boy>
+        <friend>
+            <name>tom</name>
+            <age>21</age>
+            <phone></phone>
+        </friend>
+        <friend>
+            <name>tom</name>
+            <age>21</age>
+            <phone></phone>
+        </friend>
+    </Boy>
+    <Girl>
+        <friend>
+            <name>tom</name>
+            <age>21</age>
+            <phone></phone>
+        </friend>
+    </Girl>
+</myFriend>

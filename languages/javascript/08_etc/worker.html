@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <h1>Worker</h1>
+    <h2>누적 합계를 구할 숫자를 입력하셈</h2>
+    <p>숫자: <input type="number" id="num"></p>
+    <button onclick="cal()">계산</button>
+    <button onclick="stopCal()">계산 중지</button>
+
+    <script>
+        // function cal(){
+        //     let sum = 0;
+        //     let num = document.getElementById("num").value;
+        //     for(let i = 1; i <=num; i++){
+        //         sum += i;
+        //     }
+        //     //alert(num +"까지의 합계는 " + sum + "입니다.");
+        //     alert(`${num}까지의 합계는 ${sum}입니다.`);
+        // }
+
+        let worker;
+        function cal(){
+            if(worker) worker.terminate();
+            let num = document.getElementById("num").value;
+            worker = new Worker("work.js");
+            worker.postMessage(num);
+            worker.onmessage = function(event){
+                console.log(event);
+                alert(`${num}까지의 합계는 ${event.data}입니다.`); 
+            }
+        }
+
+
+        function stopCal(){
+            alert("wow");
+        }
+    </script>
+</body>
+</html>

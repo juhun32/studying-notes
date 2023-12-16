@@ -1,0 +1,6 @@
+#jdbc driver
+#Wed May 03 15:46:36 KST 2023
+password=pass
+driver=oracle.jdbc.driver.OracleDriver
+user=user
+url=jdbc\:oracle\:thin\:@127.0.0.1\:1521\:xe

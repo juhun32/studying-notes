@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+    <h1>Regular Expression</h1>
+    <p>특수 문자 패턴을 이용하여 문자열에서 특정 내용을 찾는 방법</p>
+    <p>문법 : /pattern/modifiers; => /w3schools/i;</p>
+
+    <p id="p01">The best things in life are free!</p>
+
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+
+    <script>
+        let text = "Visit W3Schools!";
+        let n = text.search("w3Sc");
+        //let n = text.toLowerCase().search("w3Sc".toLowerCase());
+        document.getElementById("demo").innerHTML = n;
+        let m = text.search(/w3sChools/i); /* i = 대소문자 구분하지 말고 */
+        document.getElementById("demo1").innerHTML = m;
+
+        // let rep = text.replace("visit", "use")
+        let rep = text.replace(/visit/i, "Use")
+        document.getElementById("demo2").innerHTML = rep;
+
+        let a = "Is this all there is?";
+        let result = a.match(/is/gi);/* g = 전체 */
+        document.getElementById("demo3").innerHTML = result;
+
+        let b = "\nIs th\nis it?"; /* \n = 엔터 */
+        // alert(b);
+        let result1 = text.match(/is/m);
+        document.getElementById("demo4").innerHTML = "Result is: " + result1;
+
+        let c = document.getElementById("p01").innerHTML;
+        const pattern = /e/;
+        document.getElementById("demo5").innerHTML = pattern.test(c);
+
+        let pat = /[abc]-[0-9]-(x|y)/; /* [abc]+- =복합문 = 맨끝이 abc로 끝나면 됨 */
+        console.log(pat.test("a-1-o"));
+
+        var sentence = 'The quick brown fox jumped Over The Lazy Dog.';
+        
+        console.log(sentence.search("fox"));
+        console.log(sentence.search(/the/i));
+        console.log(sentence.match(/the/i));
+        let regPat = /the/i;
+        console.log(regPat.test(sentence));
+
+        let regex = /[^\w\s]/g;
+        let regex2 = /[^a-zA-Z0-9\s]/g;
+        console.log(sentence.search(regex));
+        console.log(regex2.test(regex));
+
+        let phone_pattern = /\d{3}-\d{3,4}-\d{4}/;
+        let num = "010-123-1434";
+        console.log(phone_pattern.test(num));
+        
+
+        let regex_email = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]$/i;
+        let email = "abc.abc-abc_789@a.korea";
+        console.log(regex_email.test(email));
+
+        
+
+
+
+    </script>
+</body>
+
+</html>

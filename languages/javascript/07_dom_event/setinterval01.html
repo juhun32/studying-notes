@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>SetInterval &amp; ClearInterval</h1>
+
+    <h2>일정 시간 간격으로 값 증감 시키기</h2>
+
+    <button onclick="clearInterval(up)">증가 정지</button>
+    <button onclick="clearInterval(down)">감소 정지</button>
+    <button onclick="add_restart()">증가 재시작</button>
+    <button onclick="sub_restart()">감소 재시작</button>
+
+    <script>
+        let addNum = 0;
+        let subNum = 1000;
+
+        let add = function () {
+            addNum++;
+            console.log("addNum >> " + addNum);
+        }
+
+        let up = setInterval(add, 1000);
+
+        let sub = function () {
+            //alert("o");
+            subNum--;
+            console.log("subNum >> " + subNum);
+        }
+
+        let down = setInterval(sub, 1000);
+
+        let add_restart = function () {
+            up = setInterval(add, 1000);
+        }
+        let sub_restart = function () {
+            up = setInterval(sub, 1000);
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width:100px; height: 100px; background-color: red;
+            margin-bottom: 10px; position: relative;
+        }
+        div#no_fill{
+            animation-name: ani; animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            }
+        div#fill{
+            animation-name: ani; animation-duration: 4s;
+            animation-fill-mode: forwards;
+            /* animation-fill-mode: backwards; */
+            
+            }
+            /* @keyframes ani {
+                from{background-color: red;}
+                to{background-color: yellow;}
+            }
+            @-webkit-keyframes ani{
+            from{background-color: red}
+            to{background-color: yellow}
+            }
+            @-mozilla-keyframes ani{
+                from{background-color: red}
+            to{background-color: yellow}
+            } */
+            @keyframes ani {
+                0%{background-color: red; left: 0; top:0;}
+                25%{background-color: yellow; left: 200px; top:0;}
+                50%{background-color: green; left: 200px; top:200px;}
+                75%{background-color: blue; left: 0; top:200px;}
+                100%{background-color: red; left: 0; top:0;}
+            }
+    </style>
+</head>
+<body>
+    <h1>animation</h1>
+    <div id="no_fill"></div>
+    <!-- <div id="fill"></div> -->
+
+</body>
+</html>

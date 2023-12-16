@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+    <h1>구구단</h1>
+
+    <p>보고 싶은 구구단은? <input type="text" id="dan" value="7">단
+        <button type="button" onclick="show()">보여주셈!!!</button>
+    </p>
+
+    <p id="gugu">결과</p>
+
+    <script>
+
+        function show() {
+            let dan = document.getElementById("dan").value;
+
+            let result = "";
+
+            let i = 1;
+            while (i <= 9) {
+                result += dan + " * " + i + " = " + dan * i + "<br>";
+                i++;
+            }
+            document.getElementById("gugu").innerHTML = result;
+        }
+
+
+    </script>
+</body>
+
+</html>

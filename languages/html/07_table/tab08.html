@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{width: 100%; background-color: peachpuff;} 
+        table, td, th{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td{text-align: center;}
+    </style>
+</head>
+<body>
+    <h2>rowspan &amp; colspan</h2>
+    <p>표의 cell을 가로 혹은 세로로 확장햐려면 rowspan, clspan속성을 사용</p>
+    <table>
+        <tr>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>Jones</td>
+            <td rowspan="2">Mary</td>
+            <td rowspan="3">33</td>
+        </tr>
+        <tr>
+            <td>Steve</td>
+        
+        </tr>
+        <tr>
+            <td colspan="2">Smith</td>
+        
+           
+        </tr>
+    </table>
+</body>
+</html>

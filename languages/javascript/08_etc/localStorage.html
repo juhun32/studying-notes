@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+    <h1>LocalStorage</h1>
+    <select name="" id="list" size="10">
+      <option value="ace" selected>ace</option>
+      
+    </select>
+
+    <fieldset>
+        <legend>로컬 스토리지 저장소</legend>
+        <p>key: <input type="text" id="key"></p>
+        <p>value: <input type="text" id="value"></p>
+        <button type="button" id="add">입력</button>
+        <button type="button" id="remove">삭제</button>
+    </fieldset>
+
+    <script>
+        // 변수 선언
+        let list;
+
+        window.onload = function () {
+            list = document.getElementById("list");
+            let add = document.getElementById("add");
+            let remove = document.getElementById("remove");
+            let key = document.getElementById("key");
+            let value = document.getElementById("value");
+            //add 버튼에 클릭 이벤트를 붙여주고 이벤트 발생 시 함수 addData를 실행하라
+            add.addEventListener("click", addData);
+            remove.addEventListener("click", removeData);
+            //init 함수 실행: localStorage의 데이터를 가져다 select 안에 option으로 뿌려줌
+            init();
+        }
+
+        function init(){
+            console.log(">>> ", list.innerHTML);
+            list.innerHTML = ""; 
+            console.log(">>> ", list.innerHTML);
+            
+            //localStorage의 데이터를 순서대로 읽어서 select 태그 안에 option 태그로 만들어 붙여준다.
+            for(let i = 0; i < localStorage.length; i++){
+                //localStorage의 0번 데이터의 키를 꺼내 key 변수에 저장
+                let key = localStorage.key(i);
+                //value에는 key 변수에 저장된 값을 넣고, 태그 사이의 텍스트에는 `키: ${key}, 값: ${localStorage[key]}`을 넣어서 option 태그를 만든다. 그렇게 만든 option 태그를 select의 option 마지막에 넣는다.
+                list.options[list.options.length] = new Option(`키: ${key}, 값: ${localStorage[key]}`, key);
+               //<option value="${key}">`키: ${key}, 값: ${localStorage[key]}`</option>
+            }
+        }
+
+        function addData(){
+            localStorage[key.value] = value.value;
+            key.value = "";
+            value.value = "";
+            init();
+        }
+
+        function removeData(){
+            console.log("list.selectedIndex >>> ", list.selectedIndex);
+            if(list.selectedIndex < 0) return;
+            let key = list.options[list.selectedIndex].value;
+            localStorage.removeItem(key);
+            init();
+        }
+
+    </script>
+</body>
+
+</html>

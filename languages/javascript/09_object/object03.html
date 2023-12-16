@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(name, age, gender) {
+            this.name = name ; 
+            this.age = age ;
+            this.gender = gender;
+            //this.height = 165;
+            // this.nationality = "korea";
+
+            this.celebrateBirthday = function(){
+                console.log("party!!!");
+                this.age++;
+            }
+        }
+
+        const p1 = new Person("tom", 33,"m");
+        const p2 = new Person("jane", 23,"f");
+
+        console.log(p1);
+        console.log(p2);
+
+        //literal 방식으로 생성한 object
+        const a = {name: "kin", age: 22, gender: "m"};
+        console.log(a);
+        a.height = 187;
+        console.log(a);
+        a.name = "";
+        console.log(a.name);
+        delete a.name;
+        console.log(a);
+        console.log(a.name);
+
+        //predefined JavaScript object(미리 틀 만들고 그것으로 찍어낸 객체) - delete 사용하지 말것
+        delete p1.name;
+        console.log(p1);
+        console.log(p2);
+
+        let people = [p1, p2];
+        for(let p in people){
+            console.log(people[p].name);
+        }
+
+        //prototype에 키 추가
+        p1.height = 177;
+        console.log(p1.height);
+        console.log(p2.height);
+
+        //Person이라는 prototype에 속성, 메소드 추가
+        Person.prototype.height = 165;
+        console.log(p2.height);
+
+        Person.prototype.lunch = function (){
+            if(this.gender == "m"){
+                console.log(this.name + "아, 라면 드셈 ㅋㅋㅋ");
+            }else{
+                console.log(this.name + "아, 스테이크 드셈 ㅋㅋㅋ");
+            }
+        }
+
+        p1.lunch();
+        p2.lunch();
+        
+
+
+    </script>
+</body>
+</html>

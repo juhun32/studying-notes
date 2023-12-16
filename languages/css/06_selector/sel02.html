@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="../main.css"> -->
+    <style>
+        h1, li{background-color: tomato;}
+        ul li{margin: 5px;}
+        ul > li{background-color: skyblue;}
+
+        div > p {border: 1px solid green;}
+
+        div~p {font-size: 25px;}
+
+        div+p{color: red;}
+
+        
+    </style>
+</head>
+<body>
+    <h1>Combinator selectors</h1>
+        <ul>
+            <li>comma(div, p): div와 p를 모두 선택</li>
+            <li>space(띄어쓰기 div p): div의 후손(div 태그 안에 포함)인 p</li>
+            <span><li>꺾쇠( div > p ): div 의 자식(div 바로 아래)인 p</li></span>
+            <li>div ~ p: div 다음에 나오는 모든 형제인 p</li>
+            <li>div + p: div 바로 다음에 나오는 형제인 p</li>
+        </ul>
+ 
+        <p>Universe</p>
+        <div>
+            <p>Little Prince</p>
+            <div class="earth">
+                <p>Fox</p>
+                <p>Snake</p>
+                <span><p>Hat</p></span>
+            </div>
+        </div>
+        <p>rose</p>
+        <p>rose</p>
+        <p>rose</p>
+</body>
+</html>

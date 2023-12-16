@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+    <h1>합계 구하기</h1>
+
+    <p>1~100까지의 합 : <span id="result"></span> </p>
+    <p> 1~100까지의 곱: <span id="result2"></span></p>
+    <p> 1~100까지의 가운데 짝수의 합: <span id="result3"></span></p>
+
+    <script>
+
+        let sum = 0;
+        let result = 1;
+        for (let i = 1; i <= 100; i++)/* i+=2 */ {
+            // console.log("i >> ", i);
+            sum += i; //sum = sum + i;
+            // console.log("sum >>", sum);
+            result *= i;
+            // console.log("result >>", result);
+            console.log("-------------");
+            // let multi = 1;
+            // for(let i = 1; i <= 100, i++){
+            //     multi *= i;
+            //     document.getElementById("result2").innerHTML = multi;
+            // }
+        }
+        document.getElementById("result").innerHTML = sum;
+        document.getElementById("result2").innerHTML = result;
+
+        let even_sum = 0;
+        // for(let i = 0; i <= 100; i+=2){
+        //     even_sum += i;
+        // }
+        for (let i = 1; i <= 100; i++) {
+            if (i % 2 == 0) {
+                even_sum += i;
+                console.log("even_sum >> ", even_sum);
+            }
+        }
+
+        document.getElementById("result3").innerHTML = even_sum;
+    </script>
+</body>
+
+</html>

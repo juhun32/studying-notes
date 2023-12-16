@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../main.css">
+    <style>
+        .rev{
+            direction: rtl;/* right to left */
+        }
+        div{
+            color: red; 
+            text-transform: uppercase; 
+            font-size: 2em;
+            letter-spacing: 20px; 
+            word-spacing: 20px;
+            line-height: 1.8; text-indent: 20px; 
+            font-style: italic;
+        }
+        span{
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="rev">거꾸로 달리는 기차</h1>
+    <h1 class="rev">  <bdo dir="">거꾸로 달리는 기차</bdo></h1><!-- bdo 거꾸로 만드는 태그 -->
+    <div> <bdo dir="rtl"> Time to go to bed!!! : 빨간색 대문자, 글자 크기: 2em, 글자 간격:10px; 단어 간격 20px; 줄 간격: 1.8, 들여쓰기: 20px, 글자 스타일: italic, <span>이 문장만 가운데 줄긋기,</span>  거꾸로</bdo>  </div><!--  -->
+</body>
+</html>

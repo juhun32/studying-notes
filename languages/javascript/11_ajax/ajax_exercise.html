@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+
+</head>
+
+<body>
+    <h1>책 검색</h1>
+    책 제목:
+    <input type="text" name="title" id="title">
+    <button type="button" onclick="searchInfo()">검색</button>
+    <div>
+    <h1 id="w"></h1>
+    <h3 id="writer"></h3>
+    <p id="e"></p>
+    <p id="d"></p>
+    </div>
+    <script>
+        function searchInfo() {
+
+            let title = document.getElementById("title").value;
+
+            let url = "https://dapi.kakao.com/v3/search/book?target=title&query=" + title;
+
+            let xhttp = new XMLHttpRequest();
+
+            xhttp.onload = function () {
+                //console.log(this);
+                //console.log(this.responseText);
+                process(this.responseText);
+            }
+
+            xhttp.open("get", url);
+            // xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.setRequestHeader("Authorization", "KakaoAK 68e2649c28be1911abbf1fd7f9d9257f");
+            xhttp.send();
+        }
+
+        let row = document.getElementById("row");
+
+        function process(data) {
+            let json_data = JSON.parse(data);
+            let books = json_data.documents;
+            console.log(books);
+            for (let i in books) {
+                document.getElementById("w").innerHTML = "제목: " + books[i].title;
+                document.getElementById("writer").innerHTML = "저자: " + books[i].authors;
+                document.getElementById("e").innerHTML = books[i].contents;
+                document.getElementById("d").innerHTML= books[i].price;
+            }
+        }
+    </script>
+</body>
+
+</html>

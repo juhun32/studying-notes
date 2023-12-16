@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title><link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <h1>Create Element</h1>
+
+    <button onclick="createHappy()">행복을 위해 필요한 것은?</button>
+
+    <div id="happy" class="tomato">Love</div>
+
+    <script>
+        // let aa = document.getElementsByTagName("h1")[0];
+        // console.log(aa);
+        // let div = document.createElement("div"); //"<div></div>"
+        // console.log(div);
+        // div.setAttribute("class", "tomato");
+        // //div.innerHTML = "Money"; //"<div>Money</div>"
+        // let node = document.createTextNode("Money"); //Money
+        // console.log(node);
+        // div.append(node); "<div>Money</div>"
+        // document.body.append(div);
+
+
+        function createHappy(){
+            let need = ["Money", "Beverage", "Family", "Delight", "Foods", "Pain", "Song", "Health", "Spouse", "Travel", "Fame", "Time", "Pet", "Freedom", "Sleep","Friend", "House", "Emotion", "Caffein", "Hobby"];
+
+            let need_json = {"박솔이":"Money", "김재우":"Beverage"};
+
+            // for(let word of need){
+            //     let div = document.createElement("div"); 
+            //     div.setAttribute("class", "tomato");
+            //     let node = document.createTextNode(word); 
+            //     div.append(node);
+            //     document.body.append(div);
+            // }
+
+            for(let name in need_json){
+                let div = document.createElement("div"); 
+                div.setAttribute("class", "tomato");
+                let node = document.createTextNode(`${name} - ${need_json[name]}`); 
+                div.append(node);
+                document.body.append(div);
+            }
+
+        }
+
+    </script>
+</body>
+</html>

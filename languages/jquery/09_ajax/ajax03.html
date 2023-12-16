@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+    <script src="../jq/jquery-3.6.1.min.js"></script>
+</head>
+
+<body>
+    <h1>ajax - done, fail, always</h1>
+    <img class="tomato" ></img>
+    <script>
+        $(function () {
+            let target = $('.tomato');
+            let result = "";
+            let url = 'test.json';
+            $.ajax({
+                url: url,
+                type: 'GET',
+
+            })
+            .done(function (res) {
+                target.attr("src", res.photo);
+                //alert('완료');
+            })
+            .fail(function (er) {
+                console.log(er);
+                alert("실패");
+            })
+            .always(function () {
+                alert("수지 방가방가 ㅋㅋㅋ");
+            });
+   
+
+        });
+    </script>
+</body>
+
+</html>

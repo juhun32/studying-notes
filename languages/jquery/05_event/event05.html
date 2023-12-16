@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+    <style>
+        .sample {
+            border: 10px solid #555;
+            border-radius: 4px;
+            padding: 0.5em 1em;
+            margin-bottom: 10px;
+            font-size: 1.4em;
+        }
+
+        #top {
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+
+            padding: 1em 2em;
+            background-color: crimson;
+            border-radius: 6px;
+
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+    <script src="../jq/jquery-3.6.1.min.js"></script>
+
+</head>
+
+<body>
+    <h1>Wheel Event</h1>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+    <div class="sample">Sample</div>
+
+    <a href="#" id="top">TOP<span class="result"></span> </a>
+
+
+    <script>
+        $(document).ready(function () {
+            $('#top').on("click", function (event) {
+                //기본 이벤트 제거
+                event.preventDefault();
+                console.log("scrollTop = " + $(window).scrollTop());
+                //$(window).scrollTop(0);
+                $("html").animate({ scrollTop: 0 }, 500, function () {
+                    alert("이동 완료!!!");
+                });
+            });
+
+            $(window).on("wheel", function (event) {
+                //console.log(event.originalEvent.wheelDelta);
+                let wheel = event.originalEvent.wheelDelta;
+                if (wheel > 0) {
+                    //스크롤 올릴때 
+                    $("span.result").html("올림..");
+                } else {
+                    //스크롤  내릴때 
+                    $("span.result").html("내림..");
+                }
+
+            });
+
+            // $(document).scroll() // 스크롤이 변경될때마다 이벤트를 발생시킴
+            // $(document).height() // 현재페이지(문서)의 높이
+            // $(window).height() // 윈도우의 크기
+            // $(window).scrollTop() // 브라우저의 스크롤 위치값
+            $(document).scroll(function () {
+                var maxHeight = $(document).height();
+                var currentScroll = $(window).scrollTop() + $(window).height();
+                console.log("$(document).height() >>> ", maxHeight);
+                console.log("$(window).height() >>> ", $(window).height());
+                console.log("$(window).scrollTop() >>> ", $(window).scrollTop());
+                if (Math.round(maxHeight/2) <= Math.round(currentScroll)) {
+                    //alert("wow");
+                    // $.ajax({
+                    //     // Append next contents
+                    //     // ...
+                    // })
+                    loadDoc("ajax.txt");
+                }
+            })
+
+
+        });
+        
+        function loadDoc(url){
+            let xhttp = new XMLHttpRequest();
+            
+            xhttp.onreadystatechange = function(){
+                console.log(this);
+                console.log(this.readyState);
+                if(this.readyState == 4 && this.status == 200){
+                    $('body').append(this.responseText);
+                }
+            }
+
+            xhttp.open("GET", url);
+            xhttp.send();
+        }
+    </script>
+</body>
+
+</html>

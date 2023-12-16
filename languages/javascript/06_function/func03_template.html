@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+    <h1>template literal</h1>
+     
+    <p id="demo"></p>
+
+    <script>
+        var sentence = 'The quick brown fox jumped Over The Lazy Dog.';
+
+        let word = 'lion';
+        // let word = 'fox';
+
+        // if(sentence.includes(word)){
+        //     var be = "  is";
+        // }else{
+        //     var be = "is not";
+        // }
+
+        // let be = sentence.includes(word)?  " is": " is not";
+
+        // document.write( "<p>The word " + word + be + " in the sentence." );
+
+        document.write(`<p>The word "${word}" ${sentence.includes(word) ? "is" : "is not"} in the sentence.`);
+
+        
+        
+        
+        let header = "Templates Literals";
+        let tags = ["template literals", "javascript", "es6"];
+
+        let html = `<h2>${header}</h2><ul>`;
+
+        for (const x of tags) {
+            html += `<li>${x}</li>`;
+        }
+
+        html += `</ul>`;
+        document.getElementById("demo").innerHTML = html;
+
+
+    </script>
+</body>
+
+</html>

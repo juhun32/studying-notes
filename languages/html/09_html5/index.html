@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{margin: 5px;}
+        #wrap{
+            width: 1200px;
+        }
+        .header{
+            width: 100%; background-color: pink; height: 100px;
+        }
+        .nav{
+            width: 100%; background-color: rgb(124, 236, 87); height: 30px;
+        }
+        .content{
+            display: flex;
+            width: 100%; background-color: pink; height: 600px;
+        }
+        .left{
+            width: 20%; background-color: yellow; height: 600px;
+        }
+        .section{
+            width: 70%; background-color: rgb(146, 176, 224); height: 600px;
+        }
+        .aside{
+            width: 10%; background-color: rgb(202, 109, 223); height: 600px;
+        }
+        .footer{
+            width: 100%; background-color: black; height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="header">
+            <h1>header</h1>
+        </div>
+        <div class="nav"></div>
+        <div class="content">
+            <div class="left"></div>
+            <div class="section">
+                <h2>div란?</h2>
+                <p>페이지 레이아웃을 만들기 쉽도록 모든 Element들을 상자로 구성하기 위해 만든 블록형 태그</p>
+                <div>Who are you? <div> I'm div.</div> you are a block tagㅋㅋㅋ</div>
+                <div>Who are you? I'm span. You are a inline tagㅋㅋㅋ</div>
+                <div>Who are you? <span style="color: red;">I'm span.</span> You are a inline tagㅋㅋㅋ</div>
+            </div>
+            <div class="aside"></div>
+        </div>
+    <div class="footer"></div>
+    </div>
+</body>
+</html>

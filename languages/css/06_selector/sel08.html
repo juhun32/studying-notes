@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../main.css">
+    <style>
+        li{background-color: teal;}
+        /* 12점 */
+        ul.tomato li{background-color: teal;}
+        /* 10점 */
+        .skyblue{background-color: skyblue;}
+        /* 12점 */
+        ul li.skyblue{background-color: skyblue;}
+        /* 100점 */
+        #peru{background-color: peru;}
+        .king{ background-color: royalblue !important;}
+
+    </style>
+
+</head>
+<body>
+    <h1>Select 우선 순위</h1>
+    <ul class="tomato">
+        <li>external -> internal -> inline</li>
+        <li>같은 수준 내 - 순서</li>
+        <li class="skyblue">tag name: 1 point</li>
+        <li class="skyblue" id="peru">class, attribute, pseudo-class: 10 points</li>
+        <li class="skyblue" id="peru" style="background-color: pink;">id : 100 points</li>
+        <li>inline: 1000 points</li>
+        <li class="king" id="peru" style="background-color: pink;">!important: 내가 왕이다!!!</li>
+    </ul>
+</body>
+</html>

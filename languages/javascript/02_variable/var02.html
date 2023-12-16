@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <h1 id="myCar">hi</h1>
+
+    <script>
+        //변수 a를 선언
+        var a;
+        //변수 a를 7을 넣어 초기화
+        a = 7;
+        //변수 b를 선언하고 9로 초기화 
+        var b = 9;
+        //변수 c를 선언하고 변수 a의 값과 변수 b의 값을 더한 값으로 초기화
+        var c = a + b;
+        // alert("c = " + c);
+        //변수 car에 갖고 싶은 차 이름을 저장하시오
+        var car = "Maserati";
+        var owner = "전성배";
+        console.log(owner + " : " + car);
+        var myCar = document.getElementById('myCar');
+        console.log(myCar)
+        myCar.innerHTML = owner + "의 차는 " + car + " 입니다.";
+    </script>
+
+</body>
+</html>

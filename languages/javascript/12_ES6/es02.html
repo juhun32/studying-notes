@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        // add(3, 8);
+        // function add(x, y) {
+        //     var sum = x + y;
+        //     console.log(sum);
+        // }
+        // arrow function
+        const add = (x, y) => {
+            var sum = x + y;
+            console.log(sum);
+        }
+        add(3, 8);
+
+        const greet = x => "welcome " + x;
+        alert(greet("hi"));
+
+        const x = () => alert("end!");
+        x();
+
+        var arr = [2, 3, 5, 7];
+        arr.forEach(function (el) {
+            console.log(el * 2);
+        });
+        //arrow function
+        const arr2 = [2, 3, 5, 7];
+        arr2.forEach(v => {
+            console.log(v * 2);
+        });
+        //변수의 기본값
+        function test(a, b = 3, c = 7) {
+            return a + b + c;
+        }
+        console.log(test(5));
+        console.log(test(5, 7, 9));
+
+        const test2 = (a, b = 3, c = 7) => {
+            return a + b + c;
+        }
+        console.log(test2(5));
+        console.log(test2(5, 7, 9));
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

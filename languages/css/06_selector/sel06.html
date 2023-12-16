@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{width: 200px;}
+        /* h1 ~ img:nth-child(3){border: 10px solid silver;} */
+        /* 똑같아야 한다. */
+        [title="kiwi"] {
+            border: 10px solid silver;}
+        /* 단어 전체 포함 */
+        [title~="fruit"]{border: 10px solid green;}
+        /* 포함 */
+        a[href*="w3"]{color: chocolate; font-size: 25px;}
+        /* 시작 */
+        a[href^="https"]{text-decoration: none;}
+        a[href^="https"]{text-decoration: none; background-color: blueviolet;}
+        /* 끝 */
+        a[href$="txt"]{text-transform: uppercase;}
+        a[href$="com"]{text-transform: uppercase;}
+    </style> 
+</head>
+<body>
+    <h1>Attribute selectors</h1>
+
+    <img src="/images/1.jpg" alt="" title="fruit blueberry">
+    <img src="/images/2.jpg" alt="" title="kiwi">
+    <img src="/images/3.jpg" alt="" title="fruit lemon">
+
+    <hr>
+    <li><a href="http://www.daum.net">daum</a></li>
+        <li><a href="http://www.naver.com">naver</a></li>
+        <li><a href="https://www.google.com">google</a></li>
+        <li><a href="file://e:\ace\a.txt">a.txt</a></li>
+         <li><a href="http://www.w3schools.com">w3schools</a></li>
+</body>
+</html>

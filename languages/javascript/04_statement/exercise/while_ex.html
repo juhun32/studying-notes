@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let i = 0;
+        while (i < 10) {
+            console.log(i + "번째사랑해");
+            i++;
+        }
+        console.log("----------------------");
+
+
+        // let num;
+        // num = prompt(">>> " );
+        // i = 0;
+        // while( i < num){
+        //     console.log(i + "번째 사랑해");
+        //     i++;
+        // }
+        // console.log("----------------------");
+
+
+        // while (true) {
+        //     num = 0;
+        //     i = 0;
+        //     num = prompt(">>> ");
+        //     while (i < num) {
+        //         console.log(i + "번째 사랑해");
+        //         i++;
+        //     }
+        //     console.log("")
+        // }
+
+        // let answer = 57;
+        let answer = Math.floor(Math.random()*100)+1;
+      let guess = 0;
+      let flag = true;
+      let count = 0;
+      while (flag) {
+        guess = prompt(">>> ");
+        count++;
+        if(guess > 57){
+            console.log("down")
+        }else if(guess < answer){
+            console.log("up")
+        }else if(guess == answer){
+            console.log("ㅊㅋㅊㅋ")
+            flag = false;
+        }
+      }
+      console.log(count + "번에 성공!!!!");
+    </script>
+</body>
+
+</html>

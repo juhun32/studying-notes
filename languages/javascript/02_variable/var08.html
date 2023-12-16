@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+    <h1>계산기</h1>
+    <form action=""> <!-- 1 -->
+        <input type="text" name="num1" id="num1"><!-- 2 -->
+        <select name="operator" id="operator">
+            <!-- 6 -->
+            <option value="plus">+</option>
+            <option value="minus">-</option>
+            <option value="multi">*</option>
+            <option value="divide">/</option>
+        </select>
+        <input type="text" name="num2" id="num2"> <!-- 3 -->
+        <button type="button" onclick="calcul()">=</button><!-- 4 -->
+        <input type="text" name="result" id="result"><!-- 5 -->
+
+    </form>
+
+
+
+
+
+
+
+
+    <script>
+        // calcul 함수를 만듬
+        // 1.num1의 값 받아오기
+        // 2.num2의 값 받아오기
+        // 3.두 숫자의 값 연산하여 result에 출력
+        function calcul() {
+            var num1 = document.getElementById("num1").value; /* 변수 num1에 id값 nmu1인 값으로 초기화 한다. 1*/
+            console.log("num1 >>> ", num1);
+            var num2 = document.getElementById("num2").value;/* 변수 num2에 id값 num2인 값으로 초기화 한다. 2*/
+            console.log("num2 >>> ", num2);
+            var operator = document.getElementById("operator").value;/* 변수 operator에 id값이 operator인 값으로 초기화 한다.  5 */
+
+            /* =은 값을 준다 ==는 우리가 아는 같다 === 은 값과 문자값인지 숫자값인지 까지 비교 */
+            if (operator == "plus") {
+                var result = parseInt(num1) + parseInt(num2);  /* 6 */
+            } else if (operator == "minus") {
+                var result = parseInt(num1) - parseInt(num2);
+            } else if (operator == "multi") {
+                var result = parseInt(num1) * parseInt(num2);
+            } else if (operator == "divide") {
+                var result = parseInt(num1) / parseInt(num2);
+            }
+
+            
+            console.log("result >>> ", result); /* result변수에 1+2의 값을 부여 3*/
+            document.getElementById("result").value = result; /* id가 result인 엘리멘트에 result의 값을 넣게함 4*/
+        }
+
+    </script>
+</body>
+
+</html>

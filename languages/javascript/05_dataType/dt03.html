@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <h1>Array</h1>
+    <p>여러 타입의 데이터를 묶어서 보관할 수 있는 객체(object)</p>
+    <div class="sky">["red", true, "blue", "yellow", 7, null}</div>
+
+    <script>
+        let a = new Array(3); //3칸짜리 어레이 생성
+        a[0] = 12;
+        a[1] = 24;
+        a[2] = 36;
+
+        document.write(a);
+        document.write("<hr>");
+        document.write(a[1]);
+        document.write("<hr>");
+        a[3] = 55;
+        document.write(a[3]);
+        document.write("<hr>");
+
+        let b = ["yesterday", "today", "tomorrow"];
+        document.write(b);
+        document.write("<hr>");
+        document.write(b[1]);
+        document.write("<hr>");
+        let c = ["dream", 77, true];
+        document.write(c);
+        document.write("<hr>");
+        if(c[2]){
+            document.write("yes");
+            document.write("<hr>");
+        }else{
+            document.write("no");
+            document.write("<hr>");
+        }
+        //Array.length : 어래이의 원소 개수
+        document.write("b.length: " + b.length);
+        document.write("<hr>");
+        document.write("a.length: " + a.length);
+        document.write("<hr>");
+
+        for(let i = 0; i < b.length; i++){
+            document.write(b[i])
+            document.write("<hr>");
+        }
+
+        for(let i =0; i < b.length; i++){
+            if(b[i] == "today"){
+            document.write(b[i] + " : I love you!!!");
+            document.write("<hr>");
+            }else{
+                document.write(b[i] + " : I hate you!!!");
+                document.write("<hr>");
+            }
+        }
+
+        // array + array => string
+        let d = b + c;
+        document.write(d);
+        document.write("<hr>");
+        document.write(d[1]); //문자열도 array임, 각 글자가 하나의 원소. 문자열의 두 번째 글자 출력
+        document.write("<hr>");
+    </script>
+</body>
+</html>

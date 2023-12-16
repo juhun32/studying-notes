@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+<script src="../jq/jquery-3.6.1.min.js"></script>
+</head>
+<body>
+    <h1>multi event</h1>
+    <p>마우스 놀이터</p>
+
+    <script>
+        $(function(){
+            $('p').on({
+                mouseenter: enter,
+                mouseleave: function(){
+                    $(this).css('background', 'pink');
+                },
+                click: function(){
+                    $(this).css('background', 'red');
+                }
+            });        
+        });
+
+        const enter = function(){
+                $(this).css('background', 'skyblue');
+        }
+    </script>
+</body>
+</html>

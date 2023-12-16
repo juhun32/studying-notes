@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+    <h2>현재 시간은 <span id="hour"></span>시 <span id="min"></span>분 입니다.</h2>
+
+    <p id="greeting">안냐세요?</p>
+
+    <script>
+        //현재 시간을 추출하여 출력하고 그 시간을 기준으로 if문을 사용해서 적절한 인사말을 출력
+
+        //10시 이전이면  Good Morning!!!
+        //18시 이전이면 Good Afternoon!!!
+        //그 이후면 Good Evening!!!
+        let date = Date();
+        console.log(date);
+        let dateObject = new Date();
+        console.log(dateObject);
+        //let hour = date.getHours(); //not a function
+        let hour = dateObject.getHours();
+        console.log(hour);
+        let min = dateObject.getMinutes();
+        console.log(min);
+
+        document.getElementById("hour").innerHTML = hour;
+        document.getElementById("min").innerHTML = min;
+
+        if (hour > 18) {
+            document.getElementById("greeting").innerHTML = "Good Evening!!!";
+        } else if (hour > 10) {
+            document.getElementById("greeting").innerHTML = "Good Afternoon!!!";
+        } else {
+            document.getElementById("greeting").innerHTML = "Good Morning!!!";
+        }
+    </script>
+</body>
+
+</html>

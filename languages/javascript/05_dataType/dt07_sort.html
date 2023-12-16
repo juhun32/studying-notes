@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <h1>sort: 정렬</h1>
+
+    <p>자바스크립트에서 정렬 함수는 array 자체를 변경</p>
+    
+    <script>
+        //sort() - 오름차순 정렬
+        let fruits = ["strawberry", "melon", "orange", "peach", "apple", "pineapple"];
+        console.log(fruits);
+        fruits.sort();
+        console.log(fruits);
+
+        //reverse() - array 순서를 거꾸로 - 내림차순 함수로 사용하려면 먼저 sort하고 사용하야함
+        fruits.reverse(); 
+        console.log(fruits);
+
+        let nums = [33, 7, 85, 39, 19, 5, 77, 27];
+        console.log(nums);
+        nums.sort();
+        console.log(nums);
+        
+
+        // nums.sort(); //문자 방식 오름차순 정렬하므로 오류
+        // console.log(nums);
+
+        let num_asc_sort = function(left, right){
+            return left - right;
+        }
+        let num_desc_sort = function(left, right){
+            return right - left;
+        }
+
+        nums.sort(num_asc_sort);
+        console.log(nums);
+        nums.sort(num_desc_sort);
+        console.log(nums);
+
+    </script>
+</body>
+</html>

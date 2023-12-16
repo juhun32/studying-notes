@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+    <h1>Game</h1>
+
+    <p>비밀번호: <input type="text" id="pw"> <span id="info"></span> </p>
+    <button type="button" onclick="start()">게임시작</button>
+    <p>결과: <input type="text" id="result"></p>
+    <hr>
+
+    <script>
+        function start() {
+            let pw = document.getElementById("pw").value;
+            let info = document.getElementById("info");
+            let result = document.getElementById("result");
+            if (pw != "1234") {
+                info.innerHTML = "비번 틀림";
+                return;
+            };
+        
+            for(let i = 0; i < 10; i++){
+                let ran = parseInt(Math.random()*10);
+                result.value = i + " : " + ran;
+                if(i == ran){
+                    console.log(i);
+                    console.log("축하!!!")
+                    result.value = "성공 >>> " + i;
+                    break;
+                }else{
+                result.value = "실패 >>> ";
+                }
+            }
+           
+        }
+
+    </script>
+</body>
+
+</html>

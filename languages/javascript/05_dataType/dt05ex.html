@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = new Array(5);
+        // a[0] = 1;
+        // a[1] = 2;
+        // a[2] = 3; 
+        // a[3] = 4; 
+        // a[4] = 5;
+
+        //let a = [1, 2, 3, 4, 5];
+        let sum = 0;
+        let len = a.length;
+        for(let i = 0; i < len; i++){
+            a[i] = i + 1;
+            document.write (a[i]);
+            console.log(a[i]);
+            sum += a[i];
+        }
+        console.log("합계: " + sum);
+        console.log("평군:  "  + sum/len);
+        document.write("<hr>");
+        console.log("----------");
+
+        let c = {"name": "이순신", "age": 37, "hobby": "golf"};
+        
+        console.log(c.name);
+        console.log(c.age);
+        console.log(c.hobby);
+        for(let i in c){
+            console.log(i + " : " + c[i]);
+        }
+        console.log("----------");
+        
+        
+
+    </script>
+</body>
+</html>

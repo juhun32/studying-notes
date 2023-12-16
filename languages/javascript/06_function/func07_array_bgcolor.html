@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+    <style>
+        div {
+            width: 300px;
+            height: 100px;
+            font-size: 20px;
+            margin: 20px auto;
+            border: 1px solid black;
+            text-align: center;
+            background-color: antiquewhite;
+        }
+
+        #color_name {
+            font-size: 50px;
+            font-weight: bolder;
+            font-variant: small-caps;
+            line-height: 90px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Array bgColor</h1>
+
+    <table border="1" height="100">
+        <tr>
+            <td bgcolor="red" onmouseover="changeColor(0)"></td>
+            <td bgcolor="orange" onmouseover="changeColor(1)"></td>
+            <td bgcolor="yellow" onmouseover="changeColor(2)"></td>
+            <td bgcolor="green" onmouseover="changeColor(3)"></td>
+            <td bgcolor="blue" onmouseover="changeColor(4)"></td>
+            <td bgcolor="navy" onmouseover="changeColor(5)"></td>
+            <td bgcolor="violet" onmouseover="changeColor(6)"></td>
+        </tr>
+    </table>
+
+    <div><span id="color_name"></span></div>
+
+    <script>
+        let colors = ["red","orange","yellow","green","blue","navy","violet"]
+
+        const changeColor = function(num){
+            document.body.style.backgroundColor = colors[num];
+            document.getElementById("color_name").innerHTML = colors[num];
+        }
+    </script>
+</body>
+</html>

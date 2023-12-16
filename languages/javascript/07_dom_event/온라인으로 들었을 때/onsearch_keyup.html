@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+  
+</head>
+<body>
+    <h1>onsearch &amp; onkeyup <span id="secret" style="display: none;">웃기지 ㅋㅋㅋ</span></h1>
+
+    <!-- <p>검색: <input type="search" onsearch="search()" id="myInput" onkeyup="copy()"></p> -->
+    <p>검색: <input type="search" onsearch="search()" id="myInput"></p>
+    <p id="result"></p>
+    <p id="yourInput"></p>
+
+    <script>
+        let myInput = document.getElementById("myInput");
+        let result = document.getElementById("result");
+        let yourInput = document.getElementById("yourInput");
+
+        function search(){
+            result.innerHTML = `지금 당신은 ${myInput.value}를 찾고 있습니다.`;
+        }
+
+        function copy(){
+            yourInput.innerHTML = myInput.value;
+        }
+
+        // myInput.addEventListener("keyup", copy);      
+        // document.querySelector("h1").addEventListener("mouseenter", function(){
+        //     document.getElementById("secret").style.display = "inline-block";
+        // }) ; 
+    </script>
+</body>
+</html>

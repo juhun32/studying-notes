@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+
+<body>
+
+    <script>
+        let data = {name: "tom"};
+        //let a = {b:[{c:e,f:g},{c:e,f:g}]};
+        
+        let colors = {
+            "colorsArray": [{
+                "colorName": "red",
+                "hexValue": "#f00"
+            },
+            {
+                "colorName": "green",
+                "hexValue": "#0f0"
+            },
+            {
+                "colorName": "blue",
+                "hexValue": "#00f"
+            }
+            ]
+        };
+        //colorArray 추출
+        let title = Object.keys(colors)[0];
+        console.log(title);
+
+        let result = `<h1>${title}</h1>`;
+
+        //colors의 colorsArray값
+        let colorNames = colors.colorsArray;
+        console.log(colorNames);
+        
+        result += "<table><tr><th>color name</th><th>hexa value</th></tr>";
+        //colorNames 의 키
+        for(let i in colorNames){
+            console.log(colorNames[i]);
+            let col = colorNames[i];
+            result += "<tr>"
+        //키의 값
+            for(let key in col){
+                console.log(col[key]);
+                result += `<td>${col[key]}</td>`;
+            }
+            result += "</tr>"
+        }
+        result += "</table>"
+
+        document.body.innerHTML = result;
+
+
+        
+
+    </script>
+</body>
+
+</html>

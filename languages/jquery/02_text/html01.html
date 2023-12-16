@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+    <script src="../jq/jquery-3.6.1.min.js"></script>
+</head>
+
+<body>
+    <p>이름: <input type="text" id="test" value="홍길동"></p>
+    <button>당신의 이름은?</button>
+    <h3>당신의 이름은 <span id="name"></span>이군요 ㅋㅋㅋ</h3>
+
+    <script>
+        $(function () {
+            $('button').click(function(){
+                // let name = $('#test').val();
+                // $('#name').html(name);
+                $('#name').html($('#test').val());
+            });
+        });
+    </script>
+</body>
+
+</html>

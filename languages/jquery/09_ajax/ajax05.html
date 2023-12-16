@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="/main.css"> -->
+    <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <script src="../jq/jquery-3.6.1.min.js"></script>
+    <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+</head>
+
+<body>
+    <h2>영화 오늘의 박스오피스</h2>
+
+
+    <p id="txtHint"></p>
+    <button type="button">박스오피스</button>
+    <table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>제목</th>
+                <th>개봉일</th>
+                <th>관객수</th>
+                <th>총판매액</th>
+
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>제목</th>
+                <th>개봉일</th>
+                <th>관객수</th>
+                <th>총판매액</th>
+            </tr>
+        </tfoot>
+    </table>
+    <script>
+
+        let url = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=20220913";
+
+        $(function () {
+            let result = {};
+            let boxofficeList;
+            $('button').click(function () {
+
+                $.get({
+                    url: url,
+                    success: function (data, status) {
+                        console.log("data >> ", data);
+                        console.log("status >> ", status);
+                        boxofficeList = data.boxOfficeResult.dailyBoxOfficeList;
+                        console.log(boxofficeList);
+                        $('#example').DataTable({
+                            //processing: true,
+                            //ajax: 'data.txt',
+                            data: boxofficeList,
+                            columns: [
+                                { data: 'movieNm' },
+                                { data: 'openDt' },
+                                { data: 'audiAcc' },
+                                { data: 'salesAcc' },
+                            ],
+                        });
+
+                    }
+                });
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>

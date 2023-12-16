@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <form name="frm">
+        <table>
+            <tr>
+                <td>
+                    <select id="sel">
+                        <option value="strawberry.gif">딸기
+                        <option value="banana.gif">바나나
+                        <option value="apple.gif" selected>사과
+                    </select>
+                </td>
+                <td><img id="img"></td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        $(function () {
+            $('#sel').change(function (event) {
+                console.log($(event.target));
+                let imgSrc = $(event.target).val();
+                $('#img').attr('src', imgSrc);
+            })
+            .change();
+        });
+    </script>
+</body>
+
+</html>

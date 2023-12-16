@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+    <script src="../jq/jquery-3.6.1.min.js"></script>
+</head>
+
+<body>
+    <h1>그녀가 웃었다</h1>
+    <p>그가 울었다</p>
+    <h3 class="why">그는 대체 왜 울었을까?</h3>
+    <ul>
+        <li class="why">매워서</li>
+        <li class="why">웃겨서</li>
+        <li class="why" id="grey">하품해서</li>
+    </ul>
+    <script>
+        $(function () {
+            $('h1').css('color', 'red');
+            $('p').css({'background': 'green', 'color': 'gold'});
+            $('.why').css('padding', '20px').css('margin', '10px');
+            $('#grey').click(function(){
+                $(this).css('background', 'grey')
+                    .hover(function(){
+                        $(this).fadeOut(500)
+                                .fadeIn(3000);
+                    });
+            });
+        });
+    </script>
+</body>
+
+</html>

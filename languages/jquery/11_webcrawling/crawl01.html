@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webcrawling</title>
+    <link rel="stylesheet" href="/main.css">
+    <script src="../jq/jquery-3.6.1.min.js"></script>
+</head>
+<body>
+    <div id="info"></div>
+    <script>
+        var name = "paransaram";
+        $.get('https://api.github.com/users/'+name, function(data){
+            console.log(data);
+            let avatar = $('<img>').attr("src", data.avatar_url);
+            
+            let name = data.name;
+            let url = data.url;
+            $('#info').append($('<p>').append(avatar))
+                    .append($('<p>').text("name: "+ name))
+                    .append($('<p>').text("url: "+ url));
+                    
+        });
+    </script>
+</body>
+</html>
